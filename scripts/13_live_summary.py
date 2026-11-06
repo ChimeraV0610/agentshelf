@@ -23,7 +23,9 @@ def measure(client, model, competitors, listing, buyers, vocab, tag):
     metrics = {key: result[key] for key in METRICS if key != "audit_score"}
     ranks = [row["rank"] for row in result["per_buyer"]]
     metrics["avg_rank"] = mean(result["n"] if rank is None else rank for rank in ranks)
-    metrics["omitted_count"] = ranks.count(None)
+    metrics["omitted_count"] = sum(
+        row["rank"] is None or row.get("omitted", False) for row in result["per_buyer"]
+    )
     metrics["audit_score"] = audit_listing(listing, vocab)["score"]
     if not result["n_ok"]:
         metrics["top3_rate"] = None
