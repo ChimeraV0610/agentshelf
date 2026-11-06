@@ -53,7 +53,7 @@ departments:
 models:
   agent_primary: claude-sonnet-5-5
   agent_secondary: claude-haiku-4-5
-  tagger: claude-haiku-4-5
+  tagger: ollama:qwen2.5:7b
   rewriter: claude-opus-5-5
   faithfulness_judge: claude-opus-5-5
 

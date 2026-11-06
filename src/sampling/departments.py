@@ -43,7 +43,7 @@ def tag_keyword(queries: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(out)
 
 
-def tag_llm(queries: pd.DataFrame, model: str, batch: int = 50) -> pd.DataFrame:
+def tag_llm(queries: pd.DataFrame, model: str, batch: int = 20) -> pd.DataFrame:
     client = get_client()
     system = render_department_system()
     rows = list(zip(queries["query_id"].astype(int).tolist(), queries["query"].tolist()))

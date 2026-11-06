@@ -123,7 +123,8 @@ if mode.startswith("Paste an Amazon"):
             st.markdown(f"- {c['title'][:110]}")
 elif mode.startswith("Pick"):
     labels = [f"{a:>3}/100 · {p['title'][:90]}" for a, p in zip(audits0, shelf["products"])]
-    default = int(min(range(len(audits0)), key=lambda i: audits0[i]))
+    order = sorted(range(len(audits0)), key=lambda i: audits0[i])
+    default = order[1] if len(order) > 1 else order[0]  # second-weakest: weak but a real product
     choice = st.selectbox("Shelf product (audit score · title)", labels, index=default)
     i = labels.index(choice)
     mine = fields_of(shelf["products"][i])
@@ -190,11 +191,13 @@ def show_sim(s: dict, title: str):
     c2.metric("In the agent's top 3", pct(s["top3_rate"]))
     c3.metric("Average rank", f"{s['avg_rank']:.1f} / {s['n']}" if s["avg_rank"] == s["avg_rank"] else "n/a")
     c4.metric("Seconds", f"{s['seconds']:.0f}")
-    df = pd.DataFrame(s["per_buyer"])[["need", "rank", "picked", "reason", "missing_facts", "picked_instead", "error"]]
+    df = pd.DataFrame(s["per_buyer"])[["need", "rank", "picked", "reason", "missing_facts", "picked_instead", "omitted", "error"]]
     df["missing_facts"] = df["missing_facts"].map(lambda m: ", ".join(m) if isinstance(m, list) else "")
     st.dataframe(df, hide_index=True, use_container_width=True)
     if s["missing_facts"]:
         st.warning("Facts the buyers wanted but could not find in my listing: " + "; ".join(s["missing_facts"][:10]))
+    if s.get("omitted_count"):
+        st.caption(f"{s['omitted_count']} buyer(s) left my listing out of their ranking; counted as last place.")
     if s["n_ok"] < s["n_buyers"]:
         st.error(f"{s['n_buyers'] - s['n_ok']} buyer call(s) failed; see the error column.")
 

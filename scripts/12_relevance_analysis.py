@@ -24,7 +24,7 @@ STOP = {"for", "the", "and", "with", "a", "an", "of", "to", "in", "on"}
 
 def main(n: int = 40000):
     ex = load_processed("examples_us")
-    ex = ex[ex["esci_label"].isin(["E", "S", "C", "I"])].sample(n=n, random_state=CFG["seed"])
+    ex = ex[(ex["split"] == "test") & ex["esci_label"].isin(["E", "S", "C", "I"])].sample(n=n, random_state=CFG["seed"])
     prod = load_processed("products_us").set_index("product_id")
     rows = []
     for r in ex.itertuples(index=False):
@@ -52,7 +52,7 @@ def main(n: int = 40000):
     coef = dict(zip(feats, lr.coef_[0].round(3).tolist()))
     df["coverage_bucket"] = pd.cut(df["query_term_coverage"], [-0.01, 0.25, 0.5, 0.75, 1.0], labels=["0-25%", "25-50%", "50-75%", "75-100%"])
     by_bucket = df.groupby("coverage_bucket", observed=True)["exact"].agg(["mean", "size"]).round(3)
-    out = {"n_pairs": int(len(df)), "exact_rate": float(df["exact"].mean()),
+    out = {"split": "test", "n_pairs": int(len(df)), "exact_rate": float(df["exact"].mean()),
            "logit_coefficients_standardized": coef,
            "exact_rate_by_query_term_coverage": {str(k): {"exact_rate": float(v["mean"]), "n": int(v["size"])} for k, v in by_bucket.iterrows()},
            "narrative": "Covering the shopper's own words decides whether a product is judged relevant (shelf entry); "

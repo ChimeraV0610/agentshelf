@@ -48,7 +48,7 @@ def build_shelves(n_products: int = 8, seed: int | None = None) -> dict:
         qids = q[q["query"].str.lower() == shelf_query]["query_id"].tolist()
         rows = ex[(ex["query_id"].isin(qids)) & (ex["esci_label"] == "E")].drop_duplicates("product_id")
         recs = [product_record(pid, prod.loc[pid]) for pid in rows["product_id"] if pid in prod.index]
-        recs = [r for r in recs if len(r["bullets"]) >= 1 and len(r["title"]) >= 25]
+        recs = [r for r in recs if len(r["bullets"]) >= 3 and len(r["title"]) >= 40]  # drop stubs / non-products
         rng.shuffle(recs)
         chosen, seen = [], set()
         for r in recs:  # avoid near-duplicate listings (same model in two colours / sizes)

@@ -59,7 +59,7 @@ def simulate(client, model: str, products: list[dict], mine: dict, buyers: list[
         else:
             res = client.call(model=model, system=SIMULATE_SYSTEM, user=render_user(need, payload), schema=SIMULATE_SCHEMA, tag=f"{tag}:{b}", max_tokens=1500)
         row = {"need": need, "rank": None, "picked": False, "reason": None, "missing_facts": [], "picked_instead": None,
-               "error": res.get("error"), "seconds": round(time.time() - t0, 1), "n": n_items, "ranking": []}
+               "omitted": False, "error": res.get("error"), "seconds": round(time.time() - t0, 1), "n": n_items, "ranking": []}
         d = res.get("data") if res.get("ok") else None
         if d:
             ranking = sorted([r for r in d.get("ranking", []) if r.get("id") in cid_to_pid], key=lambda r: r.get("rank", 99))
@@ -70,6 +70,8 @@ def simulate(client, model: str, products: list[dict], mine: dict, buyers: list[
             mine_r = next((r for r in ranking if cid_to_pid[r["id"]] == USER_PID), None)
             if mine_r:
                 row.update({"rank": mine_r["rank"], "reason": mine_r.get("reason", ""), "missing_facts": list(mine_r.get("missing_facts") or [])[:2]})
+            elif ranking:  # the agent left my listing out of its ranking: count it as last place
+                row.update({"rank": n_items, "omitted": True, "reason": "agent did not rank this listing at all"})
             pick = d.get("pick")
             if pick in cid_to_pid:
                 row["picked"] = cid_to_pid[pick] == USER_PID
@@ -85,6 +87,7 @@ def simulate(client, model: str, products: list[dict], mine: dict, buyers: list[
         "fair_share": 1.0 / n_items,
         "top3_rate": float(np.mean([r["rank"] <= 3 for r in ranked])) if ranked else float("nan"),
         "avg_rank": float(np.mean([r["rank"] for r in ranked])) if ranked else float("nan"),
+        "omitted_count": int(sum(r["omitted"] for r in per)),
         "reasons": [r["reason"] for r in per if r["reason"]],
         "missing_facts": sorted({m.strip().lower() for r in per for m in r["missing_facts"] if m.strip()}),
         "seconds": float(sum(r["seconds"] for r in per)),
