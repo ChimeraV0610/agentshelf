@@ -16,3 +16,12 @@ __pycache__/
 # os / editors
 .DS_Store
 .vscode/
+
+# offline mock outputs
+results_mock/
+data/samples_mock/
+cache/*_mock.sqlite
+
+# local
+.claude/
+reports/data_profile.md

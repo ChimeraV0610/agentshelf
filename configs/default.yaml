@@ -1,0 +1,86 @@
+seed: 42
+
+paths:
+  raw: data/raw
+  processed: data/processed
+  samples: data/samples
+  indices: indices
+  results: results
+  reports: reports
+  cache: cache/llm_cache.sqlite
+  usage_log: results/usage.jsonl
+
+# us_all  = every US product in the products table (larger, more realistic shelf)
+# us_small = only products referenced by small_version==1 US examples
+corpus: us_all
+
+doc_text:
+  n_bullets: 2
+  max_chars: 1000
+
+retrieval:
+  dense_model: BAAI/bge-small-en-v1.5
+  bge_query_prefix: "Represent this sentence for searching relevant passages: "
+  k_full: 100
+  rrf_k: 60
+  bm25_k1: 1.5
+  bm25_b: 0.75
+  encode_batch_size: 256
+
+ndcg_gain: {E: 1.0, S: 0.1, C: 0.01, I: 0.0}
+
+sampling:
+  n_queries: 1000
+  split: test
+  min_candidates: 8
+  min_per_department: 40
+  max_candidates_in_prompt: 30
+
+departments:
+  - Electronics
+  - Home & Kitchen
+  - Clothing, Shoes & Jewelry
+  - Beauty & Personal Care
+  - Health & Household
+  - Grocery
+  - Toys & Games
+  - Sports & Outdoors
+  - Tools, Automotive & Garden
+  - Office, Books & Media
+  - Pet Supplies
+  - Baby & Other
+
+models:
+  agent_primary: claude-sonnet-5-5
+  agent_secondary: claude-haiku-4-5
+  tagger: claude-haiku-4-5
+  rewriter: claude-opus-5-5
+  faithfulness_judge: claude-opus-5-5
+
+llm:
+  concurrency: 12
+  budget_usd: 90
+  max_tokens: 8000
+  # USD per 1M tokens: [input, output]
+  prices:
+    claude-sonnet-5-5: [2.0, 10.0]
+    claude-haiku-4-5: [1.0, 5.0]
+    claude-opus-5-5: [4.0, 20.0]
+    gpt-4o-mini: [0.15, 0.60]
+    gpt-4o: [2.50, 10.00]
+  # effort is only sent to models that accept output_config.effort
+  effort:
+    claude-sonnet-5-5: low
+    claude-opus-5-5: medium
+
+diagnosis:
+  n_products: 200
+  min_e_queries: 3
+  min_non_e_queries: 1
+  weak_rank_threshold: 10
+
+rewrite:
+  title_max_chars: 200
+  n_bullets: 5
+  max_rounds: 2
+  banned_words: [best, "#1", premium quality, amazing, top rated, number one, perfect, ultimate, world-class]
