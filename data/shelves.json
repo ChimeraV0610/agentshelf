@@ -60,20 +60,6 @@
     "description": ""
    },
    {
-    "product_id": "B07D23VB93",
-    "title": "PurifierForAir | The Best Air Purifier Product Recommendation",
-    "brand": "PurifierForAir",
-    "color": "",
-    "bullets": [
-     "Free Product Recommendations",
-     "Air Purifier Optimization Guides",
-     "Air Purifier Buyer's Guides",
-     "Allergy Friendly Tips",
-     "Air Purifier News"
-    ],
-    "description": ""
-   },
-   {
     "product_id": "B07VVF6R5L",
     "title": "Medify MA-14 Air Purifier with H13 True HEPA Filter | 200 sq ft Coverage | for Allergens, Smoke, Smokers, Dust, Odors, Pollen, Pet Dander | Quiet 99.9% Removal to 0.1 Microns | White, 2-Pack",
     "brand": "Medify Air",
@@ -84,20 +70,6 @@
      "ULTRA QUIET: Choose from 3 fan speeds, with the lowest setting operating virtually silent. Runs at 110 Volts at a maximum noise level of 55 dB. For the most discreet operation, enable sleep mode to completely dim the unit's panel lights.",
      "EASY TO USE FEATURES: Control panel includes fan speed, night light, sleep mode, and a filter replacement indicator so you know when it's time to replace the 360 degree filter.",
      "QUALITY TESTED & BACKED: CARB, ETL, and Energy Star certified. Backed by a USA registered Lifetime Warranty when genuine Medify replacement filters are used. The replacement filter (B07VF25QJ6) lasts 2,500 hours or about 3-4 months. EPA Reg Num: 99452-DVC ; CARB EO Num: G-19-142"
-    ],
-    "description": ""
-   },
-   {
-    "product_id": "B088D8C3KK",
-    "title": "How To Choose An Air Purifier Reason You Should Know",
-    "brand": "KatrinaWorley",
-    "color": "",
-    "bullets": [
-     "This app offers easy to download from any platform for any operating systems.",
-     "The user of this app will feel an incredible encounter of it since it doesn't gobble up RAM storage from the telephone.",
-     "The app size file is light that is just 15.7 MB, therefore, once you consider downloading it or keep within your gadget will turn out convenient.",
-     "Unlike any boatable apps, this app will not redirect online rather than read your external storage.",
-     "Whenever you will install this app, you can easily get access to this app, so, you can avoid any delay."
     ],
     "description": ""
    },
@@ -142,6 +114,34 @@
      "Low Energy and Library Quiet. Energy Star rated and equipped with 5 fan speeds the lowest of which is as quiet as a library."
     ],
     "description": ""
+   },
+   {
+    "product_id": "B07ZPLXB54",
+    "title": "Molekule Air Mini - FDA-Cleared Medical Air Purifier with PECO Technology for Allergens, Pollutants, Viruses, Bacteria, and Mold, White",
+    "brand": "Molekule",
+    "color": "White",
+    "bullets": [
+     "FDA-cleared to destroy viruses: Molekule Air Mini is FDA-cleared as a 510(k) Class II medical device to destroy viruses & bacteria, and trap 95% of particles 0.3-1 micron in size.",
+     "Made for smaller spaces: designed for smaller spaces up to 250 sq. ft. like studio apartments, kids’ bedrooms & home offices",
+     "PECO-powered: Uses Photo Electrochemical Oxidation (PECO) nanotechnology to destroy viruses, allergens, bacteria, mold, chemicals & more",
+     "With 5 fan speeds to choose from, you can customize your purification needs, from whisper quiet, to boost. For home-or-commercial healthcare use, Mini should be used on fan speed 3 or higher.",
+     "PECO-Filter status indicator: Easily track the replacement schedule for your PECO-Filter"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07Z1S4SY4",
+    "title": "TREDY HEPA Air Purifier for Home Large Room with Air Quality Sensor, Filters Indoor Air and Removes Smoke/Dust/Odor/Pollen/Pets Dander",
+    "brand": "TREDY",
+    "color": "Elegant White",
+    "bullets": [
+     "High Performance: 【Compact but Powerful】CADR 100cfm(170m³/h), Air Changes for Fresh for 4 Times Per Hour in a 200 f² (18.5m²) Large Room;【360°Filtration System】Patented Air Fan Captures 99.97% Airborne Particles into the Purifier and Filters by H13 True HEPA Filter, Coming Out with Clean Fresh Air for Whole Family",
+     "Smart & Automatic:【AUTO MODE】Fan Speed Adjusts Automatically According to the Air Quality; 【2-4-8H TIMER】;【SLEEP MODE】Lights Could be Turned Off and Air the Air Purifier Creates only 28DB Noise;【NIGHT-LIGHT MODE】Enter 2-Level of Night-Lights when Air Purifier is Standby",
+     "High-Technology: 【Build-in Air Quality Sensor】Runs and Detects Surrounding Air Quality Instantly, and 4-Colors of the【AQ Light】Indicates 4 Levels of Air Quality ( Red - Polluted Air | Orange - Normal Air | Green-Good Air | Blue-Pure Air ) ; You Could See How Quick the Purifier is Purifying the Air in The Room",
+     "4-Stage H13 True HEPA Filter: TD-1500 Air Purifiers Come with a Inserted 【H13 HEPA Air Filter】It removes 99.97% of Airborne Pollutant Particles As Tiny As 0.3 Micron: ① Pre-filter [captures hairs, furs and pets dander] ②True HEPA Filter [removes smoke, dust, pollen] ③ Activated-Carbon Filter [eliminates odor, smell, vocs] ④ Protective Net Filter [stop any particles going into the air fan system and protect the machine]",
+     "Packages & Spare Parts: 【Package Includes】 1 x Air Purifier , 1 x Hepa Filter Inserted, 1 x Customer Manual Book; 【Replacement Filter】is Available In TredyHome Store (Search ASIN: B08152MLP4)【The Filter Usually Lasts for More than 6 Months if You Use it Normally and Clean up Every 1-2 Weeks with Vacuum Cleaner】"
+    ],
+    "description": "TD-1500 Specifications Power Supply: AC 120V, 60Hz Rated Power: 32W Effective Range: ≤200 ft² (18.5㎡) CADR: 100cfm (170m³/h) Noise Level: 28–52dB Dimensions: Φ8.5 x 14.4 in Weight: 6.4lbs Packages 1 x Air Puriﬁer 1 x True HEPA Filter 1 x User Manual Spare Parts (Covers with and w/o Legs, 4-Stage True HEPA Filters) are Always Available in TredyHome Store"
    }
   ]
  },
@@ -241,16 +241,6 @@
     "description": "Oully is not only designed for babies and kids but also for adults and seniors. With its fabric look, it matches any decor at nursery room, kid’s room, office, hotel room perfectly, best for you and your whole family. 8 Colors Night Light & Adjustable Brightness Oully features a warm night-light with an extra 7 colorful ambient lights with adjustable brightness, it’s convenient for you to nurse your baby or kids at night and won't disturb their sleep. You can also use it to help your kids to sleeping alone without being afraid of the dark. 17 Soothing Sounds Oully has 17 High Fidelity soothing sounds- 4 white noises, 4 fan sounds and 9 realistic natural sounds (Ocean Waves, Music BOX, Shushing, Fetal Tone, Heart Beat, Bird, Summer Night, Rain, and Thunderstorm). It is effective to create an ideal environment for your sleep, relaxation and concentration. Fabric Design With its fabric look, it matches any decor at nursery room, kid’s room, office, hotel room perfectly. You can take it with you whether you are at home, office, or traveling. It can be integrated with the surrounding environment. 15 Level Adjustable Volume Oully provides 15 volume levels from very quiet to loud, allows you to choose the ideal sound level that comfortable to you. 3 Auto Timer & Memory Function Oully is easy to use and you can customize the sound, volume (from very low to adequately high), non-stop playing or using timer on it and it auto save all your preferred settings. So you don’t need to reset your regular sound and volume. Specifications: Model: AK4 Power Requirements: DC, 5W Frequency Response: 60HZ-20KHZ Product Dimensions: 13.2*8.8*8.8cm Package Includes: 1 x Sleep Sound Machine 1 x Charger 1 x USB Cable 1 x Manual"
    },
    {
-    "product_id": "B07WFXGNGF",
-    "title": "Hatch Rest+ Baby Sound Machine, Night Light, Time-to-Rise Plus Audio Monitor, White Noise Soother, Toddler Sleep Trainer, Kids Alarm Clock, Nightlight",
-    "brand": "Hatch Baby",
-    "color": "White",
-    "bullets": [
-     "Two-way Audio Monitor: Check in - without cluttering up your life. Listen and talk to your child from another room through your phone with clear transmission. Safe and secure to ensure your privacy, and audio communications never leave the confines of your home. No extra gadgets necessary.Requirements-App available in the App Store (iOS 14 or higher) and Google Play Store (Marshmallow or higher)."
-    ],
-    "description": "The sleep device that does it all, Hatch Rest+ is a baby sound machine, night light, time-to-rise, and audio monitor -- all in one. It's a sound machine: Select from a library of sounds, including lullabies and white noise. It's a night light: Choose from a rainbow of colors to make it your own. It's a time-to-rise alarm clock: Set programs to cue your child for tricky transitions, including naps, bedtime, and morning. It's a two-way baby audio monitor: Listen and talk to your child through your phone, no extra gadgets necessary. And Rest+ is safe and secure to ensure privacy. For hands-free help when you need it, ask Alexa to control your Rest+ so you can change lights, sounds, and more without lifting a finger. Rest+ is also nap-ready and storm-ready: Use cord-free on battery power for quick naps and as backup for power outages. Rest+ is Wi-Fi enabled so it's controllable from anywhere, even when you are away from home. From bassinet to big kid bed, Rest+ meets your needs as your child grows. For babies, turn up the white noise and turn on a warm hue for sleepy midnight feedings and diaper changes. For toddlers, customize programs to cue your toddler for sleep and wake up times. For big kids, encourage better big-kid sleep with reassuring lights and snooze-inducing sounds that can stay on all night. A better night's rest starts with Rest+."
-   },
-   {
     "product_id": "B09C1LTT37",
     "title": "Portable White Noise Sound Machine for Baby Sleeping - 17 Soothing Sounds | 8 Night Light | USB Rechargeable | Compact Size for Nursery & Travel & On The Go - BUFFBEE Allay",
     "brand": "BUFFBEE",
@@ -276,6 +266,20 @@
      "SIMPLE TO USE & CHILD SAFE: Forget batteries and electrical outlets - Hushh can operate 6+ hours on a single charge, and comes with convenient USB cable for recharging. The simple interface is easy to use and operate with one hand and Hushh offers the ability to lock at a desired setting and volume to prevent younger hands from altering the sound or turning the unit off."
     ],
     "description": ""
+   },
+   {
+    "product_id": "B0968L51HZ",
+    "title": "YTE White Noise Machine with 30 High Fidelity Soundtracks, 7 Colors Night Lights, Full Touch Cloth Grille and Buttons, Timer and Memory Features, Plug in, Sound Machine for Baby, Adults",
+    "brand": "YTE",
+    "color": "White",
+    "bullets": [
+     "30 High Fidelity Soothing Sounds: Provides you with 30 soundtracks, including white noise, fan noises, natural sounds, and lullaby music tracks. Our white noise machine helps you immerse yourself in a more relaxing environment.",
+     "Comforting Ambient Lights: Choose from 6 different ambient lights and a default nightlight, you can also adjust the brightness to make your light suitable for any environment via our sound machine for baby sleeping.",
+     "Adjustable Volume & Timer: Our sleep machine has up to 32 volume level settings, which can effectively block annoying noise and help you or your family to fall asleep easily. The noise machine also includes timer functions at 15, 30, 60, 90, and 120 min intervals.",
+     "Great EQ Settings: There are also 4 equalizer modes available that helps you further customize a selected sound into pop, rock, jazz or classical style to suite your mood and preference and a 3.5 headphone jack is also built-in for immersive listening experiences to prevent disturbing others around you.",
+     "Touch Technology: The speaker area of our baby sound machine is large and covered in mesh and at the same time is fully touchable can be used to turn the light on/off, or perform simple operations making our device more convenient and faster to use."
+    ],
+    "description": "Model: T3 Audio Output: 3W Working Voltage: DC 5V / 1A Output Connector: 3.5mm audio connector Working Temperature: -10°C to 50°C Working Humidity: 20% to 90%; non-condensing Dimension: 3.98 x 3.98 x 2 inches Package Included: 1x White Noise Machine. 1 x Power Adapter. 1x User Manual."
    }
   ]
  },
