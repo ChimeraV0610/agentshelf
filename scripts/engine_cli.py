@@ -27,8 +27,10 @@ def fields_of(p: dict) -> dict:
 
 
 def weakest_index(shelf: dict) -> int:
+    """Weakest audit score among real products (same rule as the app: skips stub listings)."""
     scores = [audit_listing(fields_of(p), shelf["buyer_vocab"])["score"] for p in shelf["products"]]
-    return int(min(range(len(scores)), key=lambda i: scores[i]))
+    real = [i for i, p in enumerate(shelf["products"]) if len(p["title"]) >= 40 and len(p["bullets"]) >= 3] or list(range(len(scores)))
+    return int(min(real, key=lambda i: scores[i]))
 
 
 def run_one(cat: str, model: str, n_buyers: int, do_rewrite: bool, mine_idx: int | None = None):
