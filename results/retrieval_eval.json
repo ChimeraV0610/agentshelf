@@ -1,0 +1,12 @@
+{
+  "split": "test",
+  "n_queries": 8956,
+  "n_judgements": 181701,
+  "in_candidate_ndcg": {
+    "random": 0.7465,
+    "original_order": 0.753,
+    "bm25": 0.8243
+  },
+  "dense": "not built (index build stopped to free the GPU)",
+  "esci_readme_baseline_ndcg": 0.83
+}

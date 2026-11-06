@@ -15,9 +15,12 @@ specifications, materials, compatibility, certifications, quantities, warranty t
 
 Produce:
 1. title: brand (if known), product category, then the most decisive specs, max {title_max} characters, no filler words.
-2. bullets: 5 to 7 items, each a short label and a factual statement ("Capacity: 32 oz", "Filter: true HEPA H13"),
-   each with the exact span of the original text that supports it.
-3. attributes: a structured table of every concrete attribute the original states (name/value/evidence).
+2. bullets: 5 to 7 items, each a short label and ONE factual statement of at most 20 words
+   ("Capacity: 32 oz", "Filter: true HEPA H13"), each with the exact span of the original text that supports it.
+3. attributes: a table of at most 10 concrete attributes the original states (name/value/evidence). Never write
+   "n/a" rows: an attribute the original does not state goes into seller_to_confirm instead.
+If the original states few or no concrete facts, keep the title short and factual and put the missing items
+under seller_to_confirm; do not pad.
 4. seller_to_confirm: attributes shoppers in this category usually ask for ({dept_profile}) that the original
    listing does NOT state. Do not guess their values.
 Return JSON only."""
@@ -44,7 +47,7 @@ def rewrite(client, fields: dict, dept_profile: str, model: str, judge_model: st
     blob = original_text_blob(fields)
     best, history = None, []
     for rnd in range(1, max_rounds + 1):
-        res = client.call(model=model, system=system, user=user, schema=REWRITE_SCHEMA, tag=f"{tag}:r{rnd}")
+        res = client.call(model=model, system=system, user=user, schema=REWRITE_SCHEMA, tag=f"{tag}:r{rnd}", max_tokens=1800)
         if not (res.get("ok") and res.get("data")):
             history.append({"round": rnd, "error": res.get("error")})
             continue
@@ -62,7 +65,7 @@ def rewrite(client, fields: dict, dept_profile: str, model: str, judge_model: st
         rule["pass"] = not rule["issues"]
         llm_res = client.call(model=judge_model, system=FAITHFULNESS_SYSTEM,
                               user=render_faithfulness_user(fields, {"title": title, "bullets": audit_bullets}),
-                              schema=FAITHFULNESS_SCHEMA, tag=f"{tag}:faith:r{rnd}")
+                              schema=FAITHFULNESS_SCHEMA, tag=f"{tag}:faith:r{rnd}", max_tokens=1500)
         llm = parse_llm_check(llm_res)
         passed = rule["pass"] and llm["pass"]
         best = {"title": title, "bullets": bullets, "attributes": attrs, "seller_to_confirm": [str(s) for s in d.get("seller_to_confirm", [])],

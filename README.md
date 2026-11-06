@@ -11,6 +11,21 @@ search intents (ESCI, US) and a panel of simulated LLM shopping agents it
 
 Full plan (Chinese): [AgentShelf_Hackathon_Plan.md](AgentShelf_Hackathon_Plan.md)
 
+## Live demo (the product)
+
+```bash
+make setup && cp .env.example .env
+bash scripts/00_download.sh && make data && make index      # data + BM25 index (dense is optional)
+ollama serve & ollama pull qwen2.5:7b                        # local agent, fully offline
+python scripts/11_build_shelves.py && python scripts/12_relevance_analysis.py
+python scripts/engine_cli.py --all --buyers 6 --rewrite      # pre-warm the cache before the pitch
+make app                                                     # Streamlit, 4 steps: audit -> buyers -> rewrite -> gaps
+```
+
+Paste an Amazon link or ASIN (or pick a shelf product, or paste text). The listing, 7 real competitors
+(ESCI Exact products for the same search, else BM25 neighbours among 1.2M products) and the simulated buyers
+are derived automatically. Without Ollama or an API key the app falls back to a transparent heuristic agent.
+
 ## Setup
 
 ```bash

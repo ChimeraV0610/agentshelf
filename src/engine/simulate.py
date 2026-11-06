@@ -57,7 +57,7 @@ def simulate(client, model: str, products: list[dict], mine: dict, buyers: list[
         if model == "heuristic":
             res = heuristic_rank(need, payload, seed + b)
         else:
-            res = client.call(model=model, system=SIMULATE_SYSTEM, user=render_user(need, payload), schema=SIMULATE_SCHEMA, tag=f"{tag}:{b}")
+            res = client.call(model=model, system=SIMULATE_SYSTEM, user=render_user(need, payload), schema=SIMULATE_SCHEMA, tag=f"{tag}:{b}", max_tokens=1500)
         row = {"need": need, "rank": None, "picked": False, "reason": None, "missing_facts": [], "picked_instead": None,
                "error": res.get("error"), "seconds": round(time.time() - t0, 1), "n": n_items, "ranking": []}
         d = res.get("data") if res.get("ok") else None

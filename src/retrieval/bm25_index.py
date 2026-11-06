@@ -72,13 +72,15 @@ class BM25Index:
 
     # ---------- search ----------
     def search(self, queries: list[str], k: int = 100) -> tuple[list[list[str]], np.ndarray]:
-        tok = tokenize(queries)
+        tok = [t if t else ["<empty>"] for t in tokenize(queries)]
         idx, scores = self.retriever.retrieve(tok, k=k, show_progress=False, n_threads=-1)
         return [[self.ids[j] for j in row] for row in idx], scores
 
     def get_scores(self, query: str) -> np.ndarray:
         """BM25 score of every document in the corpus for one query."""
         tok = tokenize([query])[0]
+        if not tok:  # query made only of stopwords / punctuation
+            return np.zeros(self.N, dtype=np.float32)
         return self.retriever.get_scores(tok)
 
     def score_candidates(self, query: str, product_ids: list[str]) -> np.ndarray:
