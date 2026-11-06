@@ -1,0 +1,18 @@
+# data & indices (large, regenerable)
+data/raw/
+data/processed/
+indices/
+*.npy
+
+# secrets
+.env
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# os / editors
+.DS_Store
+.vscode/
