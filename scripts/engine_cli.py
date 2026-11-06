@@ -28,8 +28,9 @@ def fields_of(p: dict) -> dict:
 
 def weakest_index(shelf: dict) -> int:
     """Weakest audit score among real products (same rule as the app: skips stub listings)."""
-    scores = [audit_listing(fields_of(p), shelf["buyer_vocab"])["score"] for p in shelf["products"]]
-    real = [i for i, p in enumerate(shelf["products"]) if len(p["title"]) >= 40 and len(p["bullets"]) >= 3] or list(range(len(scores)))
+    full = [audit_listing(fields_of(p), shelf["buyer_vocab"]) for p in shelf["products"]]
+    scores = [a["score"] for a in full]
+    real = [i for i, a in enumerate(full) if a["dimensions"]["numeric specs"]["score"] > 0 or a["dimensions"]["key attributes"]["score"] > 0] or list(range(len(scores)))
     return int(min(real, key=lambda i: scores[i]))
 
 

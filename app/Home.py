@@ -130,8 +130,9 @@ if mode.startswith("Paste an Amazon"):
             st.markdown(f"- {c['title'][:110]}")
 elif mode.startswith("Pick"):
     labels = [f"{a:>3}/100 · {p['title'][:90]}" for a, p in zip(audits0, shelf["products"])]
-    real = [i for i, p in enumerate(shelf["products"]) if len(p["title"]) >= 40 and len(p["bullets"]) >= 3] or list(range(len(audits0)))
-    default = min(real, key=lambda i: audits0[i])  # weakest listing that is still a real product (skips stubs)
+    full = [audit_listing(fields_of(p), shelf["buyer_vocab"]) for p in shelf["products"]]
+    real = [i for i, a in enumerate(full) if a["dimensions"]["numeric specs"]["score"] > 0 or a["dimensions"]["key attributes"]["score"] > 0] or list(range(len(audits0)))
+    default = min(real, key=lambda i: audits0[i])  # weakest listing that still states at least one real spec/attribute
     choice = st.selectbox("Shelf product (audit score · title)", labels, index=default)
     i = labels.index(choice)
     mine = fields_of(shelf["products"][i])
