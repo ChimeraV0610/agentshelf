@@ -20,12 +20,14 @@ def _device() -> str:
 
 
 class DenseIndex:
-    def __init__(self, ids: np.ndarray, emb: np.ndarray, model=None):
+    def __init__(self, ids: np.ndarray, emb: np.ndarray, model=None, use_faiss: bool = True):
         self.ids = ids
         self.id_to_idx = {pid: i for i, pid in enumerate(ids)}
         self.emb = emb.astype(np.float32)  # normalized
-        self.index = faiss.IndexFlatIP(self.emb.shape[1])
-        self.index.add(self.emb)
+        self.index = None
+        if use_faiss:  # exact search; costs a second copy of the matrix in RAM
+            self.index = faiss.IndexFlatIP(self.emb.shape[1])
+            self.index.add(self.emb)
         self._model = model
 
     @property
@@ -56,10 +58,10 @@ class DenseIndex:
         return cls(np.asarray(ids), emb, model)
 
     @classmethod
-    def load(cls, save_dir: Path) -> "DenseIndex":
+    def load(cls, save_dir: Path, use_faiss: bool = True) -> "DenseIndex":
         emb = np.load(save_dir / "emb.npy").astype(np.float32)
         ids = np.load(save_dir / "ids.npy", allow_pickle=True)
-        return cls(ids, emb)
+        return cls(ids, emb, use_faiss=use_faiss)
 
     # ---------- encode ----------
     def encode_queries(self, queries: list[str]) -> np.ndarray:
@@ -79,7 +81,16 @@ class DenseIndex:
         return [[self.ids[j] for j in row if j >= 0] for row in idx], scores
 
     def search_vectors(self, q: np.ndarray, k: int = 100):
-        scores, idx = self.index.search(q.astype(np.float32), k)
+        q = np.atleast_2d(q.astype(np.float32))
+        if self.index is not None:
+            scores, idx = self.index.search(q, k)
+        else:  # numpy fallback (no faiss copy): fine for a handful of queries
+            sims = q @ self.emb.T
+            idx = np.argpartition(-sims, kth=min(k, sims.shape[1] - 1), axis=1)[:, :k]
+            scores = np.take_along_axis(sims, idx, axis=1)
+            order = np.argsort(-scores, axis=1)
+            idx = np.take_along_axis(idx, order, axis=1)
+            scores = np.take_along_axis(scores, order, axis=1)
         return [[self.ids[j] for j in row if j >= 0] for row in idx], scores
 
     def score_candidates(self, query: str, product_ids: list[str], q_vec: np.ndarray | None = None) -> np.ndarray:

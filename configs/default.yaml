@@ -68,6 +68,11 @@ llm:
     claude-opus-5-5: [4.0, 20.0]
     gpt-4o-mini: [0.15, 0.60]
     gpt-4o: [2.50, 10.00]
+  # local models via Ollama: use model names like "ollama:qwen2.5:7b"
+  ollama:
+    host: http://localhost:11434
+    num_ctx: 16384      # default Ollama context is far too small for 20-30 candidates
+    concurrency: 2      # Ollama serializes requests unless OLLAMA_NUM_PARALLEL is raised
   # effort is only sent to models that accept output_config.effort
   effort:
     claude-sonnet-5-5: low

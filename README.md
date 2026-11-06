@@ -34,6 +34,20 @@ bash scripts/00_download.sh     # ESCI parquet files -> data/raw/
 | 8 rewrite eval | `make rewrite-eval` | `results/rewrite_eval.json`, `headline_table.csv` |
 | demo | `make app` | Streamlit, reads `results/` only |
 
+### Local models with Ollama (no API key)
+
+```bash
+brew install ollama && ollama serve &          # once
+ollama pull qwen2.5:7b                         # ~4.7 GB; qwen2.5:3b is ~2x faster, weaker
+python scripts/06_run_agents.py --model ollama:qwen2.5:7b --limit 20   # measure speed first
+```
+
+Any `--model` (or the `models:` block in `configs/default.yaml`) accepts `ollama:<name>`.
+The client sets `num_ctx` to 16k (Ollama's default context would silently truncate 20-30 candidates)
+and runs local calls with concurrency 2. Budget: a 7B model on an M-series laptop handles roughly
+2-3 queries per minute for the listwise judge, so plan the sample size accordingly (e.g. 300 queries
+for the local agent, or use it as the second panel member on a subset).
+
 Offline plumbing test without any API key: prefix any command with `AGENTSHELF_MOCK=1`.
 Outputs then go to `results_mock/`, `data/samples_mock/` and a separate cache, and the app shows a mock banner.
 

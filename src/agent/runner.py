@@ -13,7 +13,7 @@ def _quiet_map(client, jobs):
     if hasattr(client, "amap"):
         async def go():
             return await asyncio.gather(*[client.acall(**j) for j in jobs])
-        return asyncio.run(go())
+        return client._loop_run(go())
     return client.map(jobs)
 
 

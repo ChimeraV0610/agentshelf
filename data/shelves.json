@@ -1,0 +1,826 @@
+{
+ "air purifier": {
+  "query": "air purifier",
+  "department": "Home & Kitchen",
+  "n_real_queries": 37,
+  "buyer_vocab": [
+   "air",
+   "purifier",
+   "purifiers",
+   "filter",
+   "hepa",
+   "home",
+   "honeywell",
+   "blue",
+   "pure",
+   "blueair",
+   "bedroom",
+   "211",
+   "true",
+   "levoit",
+   "allergies",
+   "pets",
+   "coolingfor",
+   "baby",
+   "heating",
+   "without",
+   "dehumidifier",
+   "rated",
+   "big",
+   "replacement",
+   "411"
+  ],
+  "products": [
+   {
+    "product_id": "B00OLBR084",
+    "title": "Germ Guardian True HEPA Filter Air Purifier with UV Light Sanitizer, Eliminates Germs, Filters Allergies, Pollen, Smoke, Dust, Pet Dander, Mold, Odors, Quiet 28in 4-in-1 Air Purifier for Home AC5350B",
+    "brand": "GermGuardian",
+    "color": "Black",
+    "bullets": [
+     "4 in1 air purifier: True HEPA air filter reduces up to 99.97% of harmful dust, pollen, pet dander, mold spores, and other allergens as small as .3 microns from the air; Input voltage: Ac120 volt; 60 hertz",
+     "Kills germs: UV-C light helps kill airborne viruses such as influenza, staph, rhinovirus, and works with Titanium Dioxide to reduce volatile organic compounds",
+     "Traps allergens: Pre filter traps dust, pet hair, and other large particles while extending the life of the HEPA filter",
+     "Reduces odors: Activated charcoal filter helps to reduce unwanted odors from pets, smoke, cooking fumes, and more",
+     "Quiet mode: Ultra-quiet sleep mode with a programmable timer helps you get a good night’s rest with cleaner air"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07RLBT38P",
+    "title": "JINPUS Air Purifier Small Portable Air Cleaner for Bedroom with HEPA Filter, Upgraded Low Noise Home Air Purifiers GL-2103 (Powered by 4.9ft USB cable, No Adapter)",
+    "brand": "JINPUS",
+    "color": "",
+    "bullets": [
+     "☘️【Want Silent Sleeping?】Are you troubled by noise with your air purifier during sleep? Try this JINPUS air purifier! Upgraded Low noise version with 32dB to make sure you enjoy a high quality sleeping!",
+     "☘️【What benefit?】New KEPA-Tech air purifiers and 360°Purification with HEPA filter, traps 99.97% of smoke, pollen, odor, dust as small as 0.3 microns, purifies the air faster, great for your health.",
+     "☘️【Suitable for Your Room?】If you want purify air in a small room like bedroom, kids room, individual apartment or dorm, or other spaces within 80 ft², Yup!",
+     "☘️【Where to find the Adapter?】Please search \"B08T9H9J4L\" or \"jinpus adapter\" to get the adapter.Soft LED night light design helps kids or dark-phobia sleep peacefully.",
+     "☘️【30-day Return and Lifetime support】Any questions please contact us first, we are willing to offer better idea. Please search \"B07L9TGS51\" for replacement air filter, we'd suggest replace the filter every 3-4 months, no washing."
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07D23VB93",
+    "title": "PurifierForAir | The Best Air Purifier Product Recommendation",
+    "brand": "PurifierForAir",
+    "color": "",
+    "bullets": [
+     "Free Product Recommendations",
+     "Air Purifier Optimization Guides",
+     "Air Purifier Buyer's Guides",
+     "Allergy Friendly Tips",
+     "Air Purifier News"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07VVF6R5L",
+    "title": "Medify MA-14 Air Purifier with H13 True HEPA Filter | 200 sq ft Coverage | for Allergens, Smoke, Smokers, Dust, Odors, Pollen, Pet Dander | Quiet 99.9% Removal to 0.1 Microns | White, 2-Pack",
+    "brand": "Medify Air",
+    "color": "White",
+    "bullets": [
+     "MAXIMUM COVERAGE: Cleans small spaces up to 400 sq ft in one hour, 200 sq ft in 30 minutes (CADR 120). Ideal for homes, apartments, bedrooms, living rooms, offices, schools, universities, classrooms, hospitals, restaurants, and other businesses.",
+     "HEPA H13 FILTRATION: Trusted to remove 99.9% of harmful particles including allergens, odors, VOCs, smoke, pollen, pet dander, dust, smog, contaminants, and more down to 0.1 microns in size. Captures finer particles than HEPA H11 (0.3 microns).",
+     "ULTRA QUIET: Choose from 3 fan speeds, with the lowest setting operating virtually silent. Runs at 110 Volts at a maximum noise level of 55 dB. For the most discreet operation, enable sleep mode to completely dim the unit's panel lights.",
+     "EASY TO USE FEATURES: Control panel includes fan speed, night light, sleep mode, and a filter replacement indicator so you know when it's time to replace the 360 degree filter.",
+     "QUALITY TESTED & BACKED: CARB, ETL, and Energy Star certified. Backed by a USA registered Lifetime Warranty when genuine Medify replacement filters are used. The replacement filter (B07VF25QJ6) lasts 2,500 hours or about 3-4 months. EPA Reg Num: 99452-DVC ; CARB EO Num: G-19-142"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B088D8C3KK",
+    "title": "How To Choose An Air Purifier Reason You Should Know",
+    "brand": "KatrinaWorley",
+    "color": "",
+    "bullets": [
+     "This app offers easy to download from any platform for any operating systems.",
+     "The user of this app will feel an incredible encounter of it since it doesn't gobble up RAM storage from the telephone.",
+     "The app size file is light that is just 15.7 MB, therefore, once you consider downloading it or keep within your gadget will turn out convenient.",
+     "Unlike any boatable apps, this app will not redirect online rather than read your external storage.",
+     "Whenever you will install this app, you can easily get access to this app, so, you can avoid any delay."
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07FLY8YD6",
+    "title": "Air Purifiers for Home, KOIOS H13 HEPA Air Purifier for Bedroom Small Room Office Desk, Air Filter for Pets Hair Dander Smoke Pollen, Night Light,100% Ozone Free",
+    "brand": "KOIOS",
+    "color": "",
+    "bullets": [
+     "TRUE HEPA AIR PURIFIER - Filters out dust, pollen, and pet dander. This air purifier filters particles as small as 0.3 microns and larger air pollution of PM 2.5, helping to improve overall health. Perfect for pet owners, babies, children, the elderly, or anyone wanting to improve the air quality in their home, office or hotel room. The perfect holiday, birthday, house-warming gifting choice for parents, adult children, colleagues, and friends.",
+     "ENVIRONMENT-FRIENDLY AIR CLEANER - Equipped with 3-Stage Filtration system including Pre-filter, TRUE HEPA Filter, Activated Carbon Filter can effectively remove odor and smoke, such as pet odor, cigarette smoke and cooking odor around your living space and zero Ozone emission certified by California Air Resources Board",
+     "360° DEEP PURIFICATION - Efficient air intake and discharge maximize fresh and healthy air provided to all directions, improving the air circulation in your room. It can clean 55 cubic meter air per hour in normal mode and consume less than 0.002 units of power.",
+     "EASY OPERATE, SIMPLE DESIGN - Using this air purifier couldn't be easier. It takes one single press of the same button to turn it on/off and control the fan speed. The minimalist design makes it look elegant and sleek anywhere and fit any style of room decor. The low power consumption means it's more than affordable to run all day. Please NOTE: Press the button for 4 seconds to Turn ON/OFF the night light when the machine is running.",
+     "WHISPER QUIET, ENERGY-SAVING - At quiet mode, the noise is controlled under 25dB with the cutting-edge noise reducing fan blade design. You will barely be able to hear it at arm's length. And it consumes only 0.192 units of electricity with a rated power of 8W, and it would be even much less in quiet mode. (NOTE: If you have any questions, just simply get in touch with customer service.)"
+    ],
+    "description": "KOIOS Air Purifier"
+   },
+   {
+    "product_id": "B01D8DAYII",
+    "title": "Winix 5500-2 Air Purifier with True HEPA, PlasmaWave and Odor Reducing Washable AOC Carbon Filter Medium",
+    "brand": "Winix",
+    "color": "Charcoal Gray",
+    "bullets": [
+     "True HEPA filter captures 99.97% of airborne pollutants; dust mites, pet dander, pollen and other allergens as small as 0.3 microns",
+     "Washable AOC Carbon Filter, made from activated carbon granulars for removal of household odors. Decibels 27.8 dB",
+     "PlasmaWave acts as a permanent filter to safely break down odor, allergens, chemical vapors and other pollutants with no harmful ozone",
+     "Smart Sensors gauge the air and our Auto Mode adjusts the fan to filter the air as needed; with a sleep mode for silent night time operation",
+     "CADR rated for 360 square feet room size. Suitable for medium and large rooms; kids bedrooms, family rooms and kitchens"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07XSM9XBS",
+    "title": "Bissell Smart Purifier with HEPA and Carbon Filters for Large Room and Home, Quiet Bedroom Air Cleaner for Allergies, Pets, Dust, Dander, Pollen, Smoke, Odors, Auto Mode, air220, 2609A",
+    "brand": "Bissell",
+    "color": "2609a",
+    "bullets": [
+     "3-Stage Filtration for Simply Clean Air. Includes a pre-filter, activated carbon filter, and an H13 HEPA filter to capture large and fine particles, home odors, odors from pet, and VOCs.",
+     "Medical-grade HEPA Filter. Captures 99.97% of particles 0.3 microns and smaller when on lowest fan speed, helping to remove airborne allergens and irritants like dust, pet dander, pollen, and smoke like that from wildfires, cooking, and smoking.",
+     "Honeycomb-Structured Carbon Filter. Filter contains thousands of activated carbon pellets engineered to capture gases, volatile organic compounds (VOCs) and common household odors including odors from pets, cooking and smoke.",
+     "Large Room Coverage and AHAM Certified. Filters 1252 sq. ft. with 1 air change/hour. Filters 626 sq. ft. with 2 air changes/hour. Filters 417 sq. ft. with 3 air changes/hour. Filters rooms 258 sq. ft. providing 4.8 air changes/hour.",
+     "Low Energy and Library Quiet. Energy Star rated and equipped with 5 fan speeds the lowest of which is as quiet as a library."
+    ],
+    "description": ""
+   }
+  ]
+ },
+ "white noise machine": {
+  "query": "best white noise machine for baby",
+  "department": "Baby & Other",
+  "n_real_queries": 20,
+  "buyer_vocab": [
+   "machine",
+   "white",
+   "noise",
+   "sound",
+   "baby",
+   "sleep",
+   "sleeping",
+   "projector",
+   "adults",
+   "crib",
+   "doom",
+   "hallway",
+   "letsfit",
+   "portable",
+   "owl",
+   "skiphop",
+   "snooz",
+   "homedics"
+  ],
+  "products": [
+   {
+    "product_id": "B076F9LV2V",
+    "title": "Skip Hop Baby Soother, Moonlight & Melodies, Owl",
+    "brand": "Skip Hop",
+    "color": "Nursery Soother - Owl",
+    "bullets": [
+     "With plug-in power, our decor-friendly nightlight offers multiple ways to soothe baby, including music, lights and projection. Featuring a dimmable nightlight that emits a warm glow, it soothes baby with eight gentle melodies and calming nature sounds.",
+     "An adjustable pivot lens projects a starry night-scape onto any surface so little ones can see the luminous sky from his or her favorite sleeping position. Just choose the light and sound combination that's right for your baby and our sweet friend will do the rest.",
+     "Features: Serene stars & moon projection, Glowing nightlight belly with dimmer control, Four melodies & nature sounds",
+     "Parents have full control with functions to choose any combination of lights and sounds, auto-off timer: sets for 15, 30, 60 minutes or continuous play, & volume control",
+     "Size (inches): 5.5l x 4.5w x 6h; (cm): 14l x 11.5w x 15h"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B093P2D8SS",
+    "title": "Color Noise Sound Machines with 10 Colors Night Light 25 Soothing Sounds and Sleep White Noise Machine 32 Volume Levels 5 Timers Adjustable Brightness Memory Function for Adults Kids Baby (Black)",
+    "brand": "Color Noise",
+    "color": "Black",
+    "bullets": [
+     "♪【25 High-fidelity and Soothing Sounds】 There are 4 types of white noise, 4 fan sounds, 3 sea wave sounds, 3rain sounds , train, star dust, meditation, and relaxing natural sounds and so on. The sound rhythm helps you fall asleep, and the white noise machine can effectively cover up destructive or startling sounds to protect your sleep quality.",
+     "♪【10 Night Lights and Adjustable Brightness 】 The white noise machine has a unique 10-color night lights and adjustable brightness. It can be used for office lighting, milk powder changing, diaper feeding, parent-child interaction, or bedside sleep. You can use these 10 ambient lights to decorate your environment.",
+     "♪【5 Timer-Setting and Memory Function】 There are a total of 5 timer options, continuously play, 1 hour, 2 hours, 3 hours and 4 hours, you can set it according to your needs.When the automatic shut-off comes close, the sound will gradually fade out and then turn off. And the machine can also remember the settings of volume, brightness, track and timer, so you don't have to press buttons all the time!",
+     "♪【Lightweight, Portable and Easy to use】 The design of the device is simple and intuitive, light and easy to carry, and the design of large enough buttons allows you to easily change the track, turn on/off the night light, change the color of the ambient light, and even set the timer setting within a few seconds.",
+     "♪【Safety Assurance & Included】 The white noise machine has passed FCC, CE and RoHS certification, so there is no need to worry about any accidents about the product; there is a 12-month warranty since the purchase, adapter and USB are included. If you have any questions, please feel free to contact us."
+    ],
+    "description": "Sound Machine and White Noise Machine"
+   },
+   {
+    "product_id": "B085GF5G5R",
+    "title": "AIRSEE Sound Machine White Noise Machine with Baby Night Light Built-in 31 Soothing Sounds with Timer & Memory Features for Better Sleep, Portable Noise Machine for Baby, Adults, Elders, Home, Travel",
+    "brand": "AIRSEE",
+    "color": "White",
+    "bullets": [
+     "【31 SOOTHING SOUNDS】Our white noise machine provides 31 sounds, including 3 White noise, brown/ pink/ blue/ grey/ purple noise；| 7 Fan Sounds: air conditioner/ computer/ ventilation/ thick/ normal fan sound and more；| 8 Natural Sounds: waves, brook, windstorm, rain, bonfire, water Drop, birds, crickets；| 4 Music Sounds: 2 Lullabies, 2 music box sound；| 4 Scene of Life Sounds: pendulum clock, train, 2 shushing sound. Various sounds suitable for baby, kids and adults.",
+     "【ADJUSTABLE NIGHT LIGHT FEATURES】 Airsee sound machine with night light has constant light and breathing light 2 modes. The good night light creates a comfortable atmosphere for sleep, but won’t be too bright that it will keep you and your child awake. soft enough light is also perfect for newborn feeding, night nurseries, and changing diapers at midnight.",
+     "【SOOTHE TODDLER SLEEP】 White noise is most similar to the sound a baby hears in the womb, and can work like magic to make the baby fall asleep, it blocks out the disturbing crashes of surroundings, provides a more ‘homely’ aura to your tot, helps babies sleep better whether nap or night time. A sleeping baby brings a lovely and peaceful day for the whole family.",
+     "【TIMER & MEMORY FUNCTION】 Our portable sound machine with 30, 60, 120-minute timer,it is good for taking naps, relaxation, meditation, concentration while studying and working. It can also play all time if you do not choose timer function. The memory function can recall your last settings of the timer, sound, and volume when you next turn it on.",
+     "【LONG-LASTING BATTERY LIFE & CORDLESS PORTABLE】Our Airsee white noise machine built-in 2000mAh rechargeable battery, it can continuously play for up to 72 hours on a single charge. With the lightweight and compact design, you can conveniently carry it without plugs limited. 【AFTER-SALE SERVICE】You will get 45 days free return and a quickly unconditional refund; 6 months free replacement for product quality issues;"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B097XMHHG4",
+    "title": "White Noise Machine for Sleeping Baby Kids, Sound Machine with Night Light, Plug in, Noise Maker for Home",
+    "brand": "Jack & Rose",
+    "color": "White",
+    "bullets": [
+     "White Noise Machine For Sleeping Baby : Our baby sound machine for sleeping comes with the Fetal Heartbeat Sound, to mimic the sound of mother's womb to help newborn babies fall asleep faster and stay asleep longer. Whether nap time or night time, this sound machines help lull your baby to sleep. A sleeping baby means more sleep for the whole family!",
+     "Sleep Machine : Our sleep sound machine can provide you with colorful night nursing by its unique seven colors night light .It is proved that baby falls asleep easily under warm light and lullaby.",
+     "16 High Fidelity Soothing Sounds: Imagine a journey across the forest in the summer night, besides chirps of insects and birds, you can also hear the waves sound from the distant ocean, the flowing water from the valley and the sudden rain…… Equipped with 6 white noise, 4 lullaby and 6 nature sounds, White noise machine is effective in masking the disruptive or the startle sound to guard your sleep quality.",
+     "Timer & Memory Function : The sound machine for sleeping can be played continuously or 15,30,60,90,120 min auto-off timer. Set a timer on sound machine to make efficient use. What’s more, the white noise machine remember the lasting setting of light, sound, volume, so you don't bother to push buttons all the time!",
+     "Turn Your Bedroom into a Haven for Sleep：This thoughtful design of white noise machine, which will keep you away from loudy neighborhood, from noisy car whistled, from nearby ferocious dog barking and your bedside screaming husband snoring. With the tranquil and peaceful night, enjoy your sweet good dream."
+    ],
+    "description": "What's this Jack&Rose white noise machine for sleeping can be brought to you? 1) Help you or your baby have a restful sleep. 2) Create a peaceful environment, comfortable sleep helper, white noise background. 3) Cover up unwanted noise, enjoy your private space. Features: 7 color Night Lights and Breathing Light Most sleep machines have sounds only. Besides the sounds, we also features a night light with 7 colors. The bright night light makes your nighttime nursing easier. We also uses night light as a breathing light to guide you to breathe along with the rhythm of the pulsating light, helping you clam down and fall asleep. 16 High Fidelity Soothing Sounds We provide a total of 16 High Fidelity Soothing Sounds including 6 white noises(White noise, Pink noise, Brown noise, Fan noise, Fetal heart sound, Clothes dryer), 4 lullaby(Twinkle twinkle little star, Hush little baby, Rock a bye baby, Moon night song), 6 nature sounds(Crickets, Thunderstorm, Sing birds, Ocean waves, Water Stream, Water Channel). For You and Your Whole Family The white noise machine is not only designed for babies and kids but also for adults and seniors. Noise machine is not only for home, but also fits to office, meditation, yoga or cafe well with minimalist design, smooth texture and decent white color. Turn Your Bedroom into a Haven for Sleep This thoughtful design of white noise machine, which will keep you away from loudy neighborhood, from noisy car whistled, from nearby ferocious dog barking and your bedside screaming husband snoring. With the tranquil and peaceful night, enjoy your sweet good dream. Specifications: Adapter Input: 110-240V-50/60Hz Adapter Output: 5V—1.0A Device Working Voltage: DC 5V Device Working Power: 2W Note: The white noise machine does not have a built-in battery, a power adapter include for us"
+   },
+   {
+    "product_id": "B08VJCTD54",
+    "title": "BUFFBEE White Noise Sound Machine with Soothing Sounds for Sleeping with Night Light, Timer and Memory Function, Fabric Design, Sleep Machine for Adults Baby Kids, Home and Office",
+    "brand": "BUFFBEE",
+    "color": "",
+    "bullets": [
+     "【17 Non-looping Sleep Sound Machine】- 17 High Fidelity soothing sounds- 4 white noises, 4 fan sounds and 9 realistic natural sounds (Ocean Waves, Music BOX, Shushing, Fetal Tone, Heart Beat, Bird, Summer Night, Rain, and Thunderstorm). It is effective to create an ideal environment for your sleep, relaxation and concentration.",
+     "【Adjustable Volume & Fabric Design】- 15 adjustable volume levels, it can be easily adjusted, meaning you can effectively block out annoying noises or even help you or your kids fall asleep with ease.The fabric design can effectively prevent slippage. It’s perfect for any decor in nursery room, kid's room, bedroom and office. You can take it with you whether you are at home, office or traveling.",
+     "【Dimmable & Colorful Night Light】- It features a night light with an extra 7 colorful ambient lights with adjustable brightness, it’s convenient for you to nurse your baby or kids at night and won't disturb their sleep. You can also use it to help your kids to sleeping alone without being afraid of the dark.",
+     "【Auto-off Timer & Memory Function】- It includes an auto-off timer so that people can choose to turn off the sounds after 1h, 2h, or 3h or neither. Beside, the white noise machine remember the lasting setting of light, sound,. So when you re-use this sound machine, you don’t need to reset your regular sound and volume.",
+     "【Turn Your Bedroom into a Haven for Sleeping】- It is a sound machine and nightlight - thoughtful design with customizable nightlight color, brightness, soothing sounds, volume level and timer, which will help your family sleep better and stay asleep longer. Great gift for baby, kids and adults!"
+    ],
+    "description": "Oully is not only designed for babies and kids but also for adults and seniors. With its fabric look, it matches any decor at nursery room, kid’s room, office, hotel room perfectly, best for you and your whole family. 8 Colors Night Light & Adjustable Brightness Oully features a warm night-light with an extra 7 colorful ambient lights with adjustable brightness, it’s convenient for you to nurse your baby or kids at night and won't disturb their sleep. You can also use it to help your kids to sleeping alone without being afraid of the dark. 17 Soothing Sounds Oully has 17 High Fidelity soothing sounds- 4 white noises, 4 fan sounds and 9 realistic natural sounds (Ocean Waves, Music BOX, Shushing, Fetal Tone, Heart Beat, Bird, Summer Night, Rain, and Thunderstorm). It is effective to create an ideal environment for your sleep, relaxation and concentration. Fabric Design With its fabric look, it matches any decor at nursery room, kid’s room, office, hotel room perfectly. You can take it with you whether you are at home, office, or traveling. It can be integrated with the surrounding environment. 15 Level Adjustable Volume Oully provides 15 volume levels from very quiet to loud, allows you to choose the ideal sound level that comfortable to you. 3 Auto Timer & Memory Function Oully is easy to use and you can customize the sound, volume (from very low to adequately high), non-stop playing or using timer on it and it auto save all your preferred settings. So you don’t need to reset your regular sound and volume. Specifications: Model: AK4 Power Requirements: DC, 5W Frequency Response: 60HZ-20KHZ Product Dimensions: 13.2*8.8*8.8cm Package Includes: 1 x Sleep Sound Machine 1 x Charger 1 x USB Cable 1 x Manual"
+   },
+   {
+    "product_id": "B07WFXGNGF",
+    "title": "Hatch Rest+ Baby Sound Machine, Night Light, Time-to-Rise Plus Audio Monitor, White Noise Soother, Toddler Sleep Trainer, Kids Alarm Clock, Nightlight",
+    "brand": "Hatch Baby",
+    "color": "White",
+    "bullets": [
+     "Two-way Audio Monitor: Check in - without cluttering up your life. Listen and talk to your child from another room through your phone with clear transmission. Safe and secure to ensure your privacy, and audio communications never leave the confines of your home. No extra gadgets necessary.Requirements-App available in the App Store (iOS 14 or higher) and Google Play Store (Marshmallow or higher)."
+    ],
+    "description": "The sleep device that does it all, Hatch Rest+ is a baby sound machine, night light, time-to-rise, and audio monitor -- all in one. It's a sound machine: Select from a library of sounds, including lullabies and white noise. It's a night light: Choose from a rainbow of colors to make it your own. It's a time-to-rise alarm clock: Set programs to cue your child for tricky transitions, including naps, bedtime, and morning. It's a two-way baby audio monitor: Listen and talk to your child through your phone, no extra gadgets necessary. And Rest+ is safe and secure to ensure privacy. For hands-free help when you need it, ask Alexa to control your Rest+ so you can change lights, sounds, and more without lifting a finger. Rest+ is also nap-ready and storm-ready: Use cord-free on battery power for quick naps and as backup for power outages. Rest+ is Wi-Fi enabled so it's controllable from anywhere, even when you are away from home. From bassinet to big kid bed, Rest+ meets your needs as your child grows. For babies, turn up the white noise and turn on a warm hue for sleepy midnight feedings and diaper changes. For toddlers, customize programs to cue your toddler for sleep and wake up times. For big kids, encourage better big-kid sleep with reassuring lights and snooze-inducing sounds that can stay on all night. A better night's rest starts with Rest+."
+   },
+   {
+    "product_id": "B09C1LTT37",
+    "title": "Portable White Noise Sound Machine for Baby Sleeping - 17 Soothing Sounds | 8 Night Light | USB Rechargeable | Compact Size for Nursery & Travel & On The Go - BUFFBEE Allay",
+    "brand": "BUFFBEE",
+    "color": "Blue",
+    "bullets": [
+     "Multifunctional Sounds Machine: Allay is a multi-purpose design that combines soothing music sounds, night light, timer, volume control and child safety lock to create a more relaxing bedroom environment and promote healthy, quality sleep for babies and kids.",
+     "17 Soothing Sounds: Choose from 5 white noises, 2 fan sounds and 10 nature sounds including ocean, shushing, lullaby, fetal tone, campfire, summer night, rain, bird, brook and waves to mask distracting noises and let your baby sleep faster and better at night or during naps.",
+     "8 Night Lights: Allay features 8 soft night lights to soothe and comfort your baby to sleep and also provide light for nighttime diaper changes or feedings without disrupting your baby's sleep.",
+     "Compact & Portable: With a small and compact size, Allay is portable enough to fit in a diaper bag, or can be easily secured in a car seat or stroller, perfect to help to soothe your crying baby to calm down and fall asleep.",
+     "Long Battery Life, Travel Friendly: Supports all-night operation on a single fully charge, the battery life is great that you can take it out anywhere, such as when camping trips, travel and on-the-go."
+    ],
+    "description": "Portable White Noise Sound Machine for Sleeping Baby and kid - 17 Soothing Sound with Volume Control, 8 Night Light, USB Rechargeable, Child Lock and Compact Size for Nursery & Travel & On the Go"
+   },
+   {
+    "product_id": "B01D50RYSC",
+    "title": "Yogasleep Hushh Portable White Noise Machine for Baby | 3 Soothing, Natural Sounds with Volume Control | Compact for On-the-Go Use & Travel | USB Rechargeable | Baby-Safe Clip & Child Lock",
+    "brand": "Marpac",
+    "color": "Grey",
+    "bullets": [
+     "EFFECTIVELY MASKS NOISE: Beloved by generations since 1962, Yogasleep by Marpac is the trusted leader in white noise machines, and created our signature sound – the soothing ambient sounds of rushing air. That sound that’s helped millions experience better sleep for generations is now available in this light and portable design for babies. The Hushh effectively cancels out noises that may disturb or distract for improved sleep and soothing.",
+     "3 SOOTHING SOUNDS & NIGHT LIGHT: Choose from bright white noise, deep white noise, or gentle surf, then set your volume - anywhere from whisper-quiet to impressively robust. Hushh lets you take control of the sound environment, excellently masking background noise and allowing for better sleep and effective soothing for kids and babies. A gentle amber LED Night light provides just enough light to see by without causing wakefulness for parent or baby.Care & Cleaning: Spot or Wipe Clean",
+     "COMPACT & PORTABLE: At just 3.5\" in diameter and 3.8 ounces, Hushh fits easily in a diaper bag or backpack and comes with a baby-safe clip for easy fastening to a stroller, car seat, or crib.",
+     "SIMPLE TO USE & CHILD SAFE: Forget batteries and electrical outlets - Hushh can operate 6+ hours on a single charge, and comes with convenient USB cable for recharging. The simple interface is easy to use and operate with one hand and Hushh offers the ability to lock at a desired setting and volume to prevent younger hands from altering the sound or turning the unit off."
+    ],
+    "description": ""
+   }
+  ]
+ },
+ "baby carrier": {
+  "query": "baby carrier",
+  "department": "Baby & Other",
+  "n_real_queries": 8,
+  "buyer_vocab": [
+   "carrier",
+   "baby",
+   "sign",
+   "do",
+   "not",
+   "touch",
+   "front",
+   "back",
+   "breathable",
+   "lilibaby",
+   "embossed",
+   "sweater",
+   "tactical",
+   "hipster"
+  ],
+  "products": [
+   {
+    "product_id": "B010C4IS34",
+    "title": "Ergobaby 360 All-Position Baby Carrier with Lumbar Support and Cool Air Mesh (12-45 Pounds), Carbon Grey",
+    "brand": "Ergobaby",
+    "color": "Carbon Grey",
+    "bullets": [
+     "Explore with baby: For curious, developing baby who starts exploring beyond her caregiver to see the world (12-45 lbs./ 5.5-20 kg)",
+     "All Carry Position: Inward, Front Outward, Hip & Back Carry",
+     "Cool and breathable: Cooler for you and baby with soft, lightweight & durable mesh",
+     "Comfort: Padded lumbar back support and shoulder straps",
+     "Premium Features: UPF baby hood for sun protection and privacy for easy breastfeeding: Machine Washable"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B005SP2LWW",
+    "title": "Boba Wrap Baby Carrier, Grey - Original Stretchy Infant Sling, Perfect for Newborn Babies and Children up to 35 lbs",
+    "brand": "Boba",
+    "color": "Grey",
+    "bullets": [
+     "Simple, no-guess tying instructions and just one size make this wrap your GO-TO BABY CARRIER for the first three months of parenthood <3 It was the first of its kind and the simplicity of the idea has kept moms and babies together for 10 years.",
+     "Stretchy and SOFT, machine washable fabric that will keep your baby close. So much easier to clean than a stroller or carseat! You can machine wash and dry this wrap, making life just a little easier for new moms.",
+     "ERGONOMIC seat for baby, ergonomic weight distribution for mom and dad! Each time you tie the wrap, you create a CUSTOM seat for your baby. Knee to knee support every time!",
+     "EASY to tie and easy to breastfeed in. It even acts as a privacy shield for nursing moms because you can nurse while wearing it, without taking your baby out of the wrap.",
+     "Bond with your little one while getting back into the swing of things: you'll be able to tie this once and then wear it out and about. 95% Cotton, the Spandex in our wrap allows it to retain its shape and not loosen or sag as you re-adjust to nurse or take baby out to go for a ride in the car. Just like your favorite yoga pants, the wrap stretches and supports you and your baby."
+    ],
+    "description": "From birth to around 18 months, nothing takes you farther than the essential Boba Wrap. It’s free of buckles, straps and snaps and ties up into the perfect fit every time—just a couple of practice runs with our wrap instructions and you’ll be a total pro. Now you too can fall in love with the wrap-style carrier that lets you wander the world with baby in tow—your voice and heartbeat soothing every step along the way."
+   },
+   {
+    "product_id": "B0009JOSNM",
+    "title": "BABYBJORN Baby Carrier Original - Black, Cotton",
+    "brand": "BabyBjörn",
+    "color": "Black, Cotton",
+    "bullets": [
+     "Provides essential closeness and contact to help you bond with your new baby",
+     "Two safe and ergonomic carrying positions: baby facing-in and baby facing-out",
+     "Perfect for newborns - no infant insert needed. From birth to approximately 12 months",
+     "Developed with pediatricians to give the proper support for baby's head, neck, spine and hips",
+     "Small, safe and easy to use - fits perfectly and securely with only a few adjustments"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07TJPZGJM",
+    "title": "caiyuangg Baby Convertible Carrier All Carry Position Newborn to Toddlers Ergonomic Carrier with Soft Breathable Air Mesh and All Adjustable Buckles",
+    "brand": "caiyuangg",
+    "color": "Grey",
+    "bullets": [
+     "ERGONOMIC CARRIER -- The premium quality baby carrier provides a convertible, ergonomic, facing-in/out,back carry etc different seat position, which offers the baby comprehensive care and support and also can help parents or carer free hands to do other work.",
+     "PREMIUM QUALITY -- The Ergonomic Carrier is specialized customized with high quality and fine workmanship.Every details was revised repeatly! We are committes to offer the comfortable caring for your babies!",
+     "COMFORTABLE HEAD/LEG SUPPORT -- The head and thigh support part can be adjusted according to the baby's body! The baby carrier will make sure the padded head support will hold small infants comfortably!",
+     "COOL & BREATHABLE -- The baby carriers are make of soft, breathable and durable mesh fabric that provides soft breathable support for baby while allowing for ultimate breathability and airflow!",
+     "ADJUSTABLE BELTS & CUSTOMIZED FIT -- The baby carrier can be used from babies to toddlers (7-45lbs and fits babies from 3-48 Months), and both the shoulder/waist belts for adults and baby can be adjusted. So the baby carrier can be worn by different babies and different caregivers(Dad/Mommy/Baysitter/Grandma etc)!"
+    ],
+    "description": "Features: -- All-in-one baby carrier -- Comfortable carrying and support -- Adjustable seat, leg openings, straps, and waist belt -- Grow with your baby -- Lightweight -- For babies to toddlers (7-45lbs and fits babies from 3-48 Months) The Ergonomic Carrier is specialized customized with high quality and fine workmanship. Every detail was revised repeatedly! The innovative ergonomic baby carrier will adjust to your baby with different seat position and adjustable belts. We hold all of our carriers to higher safety standards and we are committed to offering the most comfortable caring for your babies!"
+   },
+   {
+    "product_id": "B07PWYQRB8",
+    "title": "Ergobaby Omni 360 All-Position Baby Carrier for Newborn to Toddler with Lumbar Support & Cool Air Mesh (7-45 Lb), Carbon Grey",
+    "brand": "Ergobaby",
+    "color": "Carbon Grey",
+    "bullets": [
+     "All-in-one baby carrier: Adapts to your growing baby from newborn to toddler (7-45lbs and fits babies from 0-48 months): No separate infant insert required: All carry positions included: Face baby in or out: Wear on the hip or back",
+     "Cool and breathable: Our cool Air Mesh collection baby carriers are made with soft and durable mesh fabric that provides our renowned ergonomic support for baby",
+     "Comfort: Exceptional lower back comfort with padded lumbar support waist belt and extra padded shoulder straps with the option to wear 2 ways: Crossed or \"backpack style\": Waist belt can be worn high or low to maximize comfort, especially post C-section",
+     "Ergonomic as baby grows: Acknowledged as hip Healthy by the International Hip Dysplasia Institute: Adjustable bucket seat supports baby in an ergonomic natural \"M\": Position in all carry positions",
+     "Easy to use: Easy, one-handed slider adjustment allows you to quickly switch baby to face in or out on the fly"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B00HZTCG2Y",
+    "title": "LÍLLÉbaby 6-in-1 Baby Carrier Waist Belt Extension Buckle, Black",
+    "brand": "LILLEbaby",
+    "color": "Black",
+    "bullets": [
+     "Flexible Sizing: The LÍLLÉbaby Waist Extension Strap extends your waistband up to an additional 9.5” for your comfort and sizing flexibility and can be used with any LÍLLÉbaby Complete or CarryOn carrier",
+     "Stroller Free: LÍLLÉbaby carriers allow parents to comfortably carry little ones hands free where strollers aren’t permitted; Our products are ideal for any caretaker looking for ergonomic babywearing tools",
+     "Hands Free Comfort: When on the go, LÍLLÉbaby's baby carriers and toddler carriers let you hold your child in comfort and style; Adjustable side panels widen and narrow the seat for comfortable hip positioning",
+     "Natural Bond: LÍLLÉbaby makes baby products that bring functional style to parents; We want parents to be able to keep baby close while building a natural bond with comfortable baby carriers and slings",
+     "For LÍLLÉBABY: Innovation is always top of mind; We won’t rest until every caretaker has access to the best babywearing solutions, allowing families to keep comfort, closeness, and independence in balance"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07BC4VPLD",
+    "title": "TBG - Mens Tactical Baby Carrier for Infants and Toddlers 8-33 lbs - Compact (Coyote Brown)",
+    "brand": "Tactical Baby Gear",
+    "color": "Coyote Brown",
+    "bullets": [
+     "Tactical, Military-Tough Design – MOLLE-compatible baby carrier that works well with any TBG accessories, carabiners and more for easy access",
+     "Made for Modern Parents – The perfect women’s or men’s baby carrier with smart features, including a removable, washable liner and one-person operation; Made of 600D tactical polyester",
+     "Lightweight, Minimalist Design – Simplistic design features a comfortable, open back for temperature control that makes it easy to pair with the Tactical Diaper Bag Backpack",
+     "Grows with Baby – Easy to adjust with UTX buckles for babies and toddlers 8 to 33 pounds; Baby can face in or out depending on developmental stage",
+     "Made for Safety and Comfort – Meets safety requirements for baby carriers (ASTM and CPSIA); Features wide bottom to support baby’s hips"
+    ],
+    "description": "Designed with tactical prowess, MOLLE-readiness and military-like efficiency, the Tactical Baby Carrier is constructed for dads on a mission. Like all steadfast equipment from Tactical Baby Gear, this next-level front harness baby carrier gives you hands-free parenting performance like never before. It’s equipped with MOLLE webbing so you can pair it with all kinds of accessories, including our compatible pouches and carabiners. Make sure all your go-to gear is in arm’s reach with this super-smart baby carrier for today’s dad. Our carrier is made from ultra-durable, 600-denier material with a 'hook and loop' front panel that you can customize with patches (sold separately) and other accessories. It’s also got a removable cotton washable liner that makes post-blowout cleanup a breeze plus heavy-duty UTX buckles that simplify strap-in. It features a one-and-done style to suit babies from 8 to 33 pounds and can carry baby facing in or out, depending on his or her developmental stage. Your precious cargo can begin to face outward when old enough to properly support the head. Available in Black, Coyote Brown, Ranger Green and Black Camo. The TBG Tactical Baby Carrier meets the safety requirements for baby carriers set forth by ASTM F2236-13 and CPSIA."
+   },
+   {
+    "product_id": "B07QPYZMH4",
+    "title": "Acrabros Baby Wrap Carrier,Hands Free Baby Carrier Sling,Lightweight,Breathable,Softness,Perfect for Newborn Infants and Babies Shower Gift,Black",
+    "brand": "ACRABROS",
+    "color": "Black",
+    "bullets": [
+     "PREMIUM BABY WRAP CARRIER – The balance of comfort, style, and support, each wraps around your back and crosses in the front for inward-facing baby wear.",
+     "SUPPORTIVE HANDS-FREE CARRYING – A smart way to keep your baby comfortable, protected, and close to your chest, this baby wrap carrier lets you move, shop, and work freely.",
+     "SOFTER BREATHABLE COMFORT – Knitted with a stretchy, high-quality rayon/polyester blended yarn,our baby wrap carrier is lighter and more comfortable for you and your baby.",
+     "Reinforced Gender Neutral Design – Acrabros baby wrap carrier offer double-sided stitching for more strength and posture stability for safe hip development.one-size-fits-all baby carrier , the stretchy knit and trendy color makes it a great addition to any mom looking to care and cradle a baby."
+    ],
+    "description": "Keep your baby calm and close with a stylish, breathable baby wrap that lets you carry them in a warm, comfortable embrace. Just because you bring your baby home from the hospital doesn’t mean all your daily responsibilities can be dismissed. An when you’ve got a baby in your arms it doesn’t leave a free hand to work around the house, go shopping, or manage all the other things you’ve got on your plate. That’s why we created the Acrabros Baby Wrap , a soft swaddling that lets you wrap them up in a warm, womb-like hug that helps them maintain their posture, supports their growth up to 35 lbs., and contours to both your body and theirs. More importantly, it’s stronger, more breathable, and provides better stability, so you can stay on the go and keep your baby close while improved confidence. Product Details: Supports Babies from Birth to 35 lbs. Rayon (45%) and Polyester (45%) Spandex (10%) Blend Enhanced Breathability and Stretchy Comfort Reinforced, Double-Sided Stitching Gender Neutral Color One-Size-Fits-All Machine Washable Satisfaction Guaranteed Get this cute, comfortable, and versatile baby wrap to make it easier to carry your baby hands-free by clicking ‘Add to Cart’ above today."
+   }
+  ]
+ },
+ "bark collar": {
+  "query": "bark collar",
+  "department": "Pet Supplies",
+  "n_real_queries": 6,
+  "buyer_vocab": [
+   "bark",
+   "collar",
+   "collars",
+   "dogs",
+   "medium",
+   "remote",
+   "zgo",
+   "citronella"
+  ],
+  "products": [
+   {
+    "product_id": "B012VYRL04",
+    "title": "Bark Collar - Humane, No Shock Training Collar - Action Without Remote - Vibration & Sound Care Modes - for Small, Medium, Large Dogs Breeds - No Harm Deterrent Reflective Vibrating Control",
+    "brand": "TOULIFLY",
+    "color": "NEW01",
+    "bullets": [
+     "Lightens & Removes Scars - This scar removal cream is an intensive solution for acne scars, surgery scars, stretch marks, C-section scars and scars from burns- cuts, and other injuries.The appearance of old and new scars will fade away for clearer skin.",
+     "Repair & Smooth Skin - Our natural scar treatment cream for men and women works deep down to get rid of the appearance of scars to give you clear, smooth skin.",
+     "Suitable for a variety of scars -This Scar Cream Gel works for many types of scars, including acne scars, surgery scars, and scars from burns, cuts, and other injuries for Men and Women.",
+     "Natural Ingredients - You will not find any harmful chemicals in our scar removal cream. It is a safe and gentle formula scar repair cream contained with herbal extracts.",
+     "Easy to use: Easily apply this into your daily skincare routine. Massage gently once or twice daily. Softens scar tissue and reduces pain."
+    ],
+    "description": "dog training collar"
+   },
+   {
+    "product_id": "B07DGZJX6B",
+    "title": "UPGRADED Q6 Rechargeable Bark Collar - Smart Barking Detection Module w/Triple Stop Anti-False Modes: Beep/Vibration/Shock for Small, Medium, Large Dogs & Breeds - IPx7 Waterproof (15-120 LBS)",
+    "brand": "TBI Pro",
+    "color": "Green",
+    "bullets": [
+     "✅ QUALCOMM MICROPROCESSOR CONTROLLED BARK DETECTION. Breakthrough technology and innovative upgrades were implemented in the advanced version of the No Bark collar featuring the Intelligent Anti-Injury Chip. The collar has 5 levels of adjustable sensitivity and 3 training modes – beep, vibration, and gentle, safe shock, effectively stopping the barking with no harm to the dogs of all types.",
+     "✅ DIGITAL DISPLAY SHOWCASING HIGH-TECH DESIGN. The adjustable digital screen displays the level of vibration, shock, and sensitivity. In accordance with the nature and behavior of your pet, you can choose the appropriate training mode for your dog to stop barking.",
+     "✅ THE HIGH-QUALITY RECHARGEABLE BATTERY WITH UP TO 14 DAYS PER 1 CHARGE! The collar contains the most intelligent barking detection system, which prevents false triggering, hence, only your dog's barking can trigger the collar, but not the barking of other nearby dogs. To ensure the safety and security of your pet, there is a built-in no bark receiver with an automatic protection mode, which deactivates the collar if activated 7 times in 1 minute, and resumes its operation after one minute.",
+     "✅ IPX7 WATERPROOF DESIGN. IPX7 solid and lightweight material allows you to safely use the collar indoors and outdoors in all weather conditions. Note: it is better to take off the collar while swimming."
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B072DS462V",
+    "title": "DogRook Rechargeable Dog Bark Collar - Humane, No Shock Barking Collar - w/2 Vibration & Beep - S, M, L Dogs Breeds Training - No Remote - 11-110 lbs",
+    "brand": "DogRook",
+    "color": "Blue",
+    "bullets": [
+     "Humane bark collar with 2 modes - in 96% cases helps decrease (eliminate) dog's barking by automatic performance with 5 safe stages of sound (beeps) and vibration. Beeps and vibrations are switching automatically based on the amount of dog's barking, increasing after each bark.",
+     "Rechargeable version - no bark collar works about 14 days with 1 battery life. Get a full charge in 2-3 hours.",
+     "Action without remote - The collar works in automatic mode, in which sounds and vibrations are combined to effectively and safely stop the barking. At the first bark, there will be only a sound signal, at the subsequent barks vibrations are added to a sound signal. Useful when you are not at home and your dog stays alone.",
+     "Adjustable for S, M, L dogs - no shock bark collar is adjustable for dogs weighing 11 to 110 lbs with neck size of 9 to 22 inches. Adjust the strap according to the size of your dog.",
+     "Extra parts - In addition to the automatic stop barking collar we have included USB cable and prong covers."
+    ],
+    "description": "bark collar"
+   },
+   {
+    "product_id": "B07VRJFG9T",
+    "title": "Dog No Bark Collar with Smart Detection Vibration and Harmless Shock- Rechargeable Anti Barking Device for Small Medium and Large Dog",
+    "brand": "ZNFSZ Dog Bark Collar",
+    "color": "Green",
+    "bullets": [
+     "Intelligent Identification Chip: The microprocessor intelligently detects the dog barking technology, which can safely and effectively filter other unrelated sounds and prevent false triggering.",
+     "The receiver is designed with a digital display to show the level, and red light for \"beep + vibration + shock\" mode, green light for \"beep + vibration\" mode, each mode has 1-7 adjustable intensity levels.",
+     "New Smart Test Mode: When the sensitivity level is adjusted to 0, the receiver enters the test mode, and you can test by blowing or shouting at the sensor microphone on the back of the receiver. When the receiver makes a sound, and then vibrations and finally shock (Test light will be on), it means the receiver works fine.",
+     "Intelligent Dual-Mode and Automatic Protection System: The dual training mode is beep+vibration, and beep+vibration+shock. In Non-Shock mode, as long as dog barking is detected, it will trigger; In Shock mode, if dog barking continues, the device will perform six different steps in turn, sleep for two minutes after the completion of six steps, and return to the initial state to protect the pet. In Automatic Protection mode, press any button to allow the product to re-enter work mode.",
+     "Rechargeable & Waterproof: The collar contains a built-in USB rechargeable battery. It can be fully charged in about 2-3 hours and gave you 10-15 days of use. IP67 waterproof level design and suit for dog swimming in summer and shower. The waterproof charging interface is designed more durable."
+    ],
+    "description": "FEATURE: Digital display -- The digital tube shows the gears of vibration ,shock and sensitivity. Adjustable mode -- 1-7 level adjustable sensitivity, 0-7 gears of the vibration/shock, you can choose according to the instructions or the actual needs of your pet. Automatic protection -- an automatic protection mode to deactivate the collar if activated 7 times in 1 minute then back to work in one minutes. Adjustable Reflective Strip -- That allows you to keep an eye on your pet even in low visibility and also can protects your pet life from cars etc. Testing 1.Turn on the power. 2.Set the sensitivity to 5-7grade and the shock greater than 0 grade. 3.Wear the tester on the conductive silicone prongs behind collar. 4.Please send a short voice like “wow” (as short as possible) to sensors.Since the frequency of human voice is different from that of pet,please test more time. Specifications: Item Size: 2.6 X 1.5 X 1 inches Item weight: 70g Package weight: 120g Collar Perimeter Size: 7.4-23.5inches Package Includes: 1 x No bark receiver 1 x Adjustable Nylon Collar 1 x Test Light 1 x USB Link 1 x Instruction NOTE: 1, Charge it before first use (adapter less than 1A). 2, If you need to adjust the strap and cut the redundant part of it, heat the end of the strap with a lighter, in case it get a raw edge. 3, Don’t wear it exceeding 10 hours a day, or it may affect the dog's skin. 4, Don’t let the dog alone at first several times. 5, Check the tightness of the strap and your pet skin regularly.The prongs must be against your pet skin to work,you just can fit one fingers snuggle between the neck and collar. 6, Please take off your iron collar,before you put the bark collar 🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁"
+   },
+   {
+    "product_id": "B07TNR3FZH",
+    "title": "NPS No Shock Bark Collar for Small to Large Dogs - Smart Chip Adjusts to Stop Barking in 1 Minute - Highly Effective Vibration and Sound Stops Barks Fast with No Pain - Safe, Anti-Bark Device (Black)",
+    "brand": "NPS",
+    "color": "Black",
+    "bullets": [
+     "No Pain, no shocks - a combination of vibration and sound increases in intensity the longer your dog barks for highly effective and trauma-free anti-barking correction training for your dog and your peace of mind. Cycles through 7 level of intensity in 1 minute.",
+     "Hands-Free - Our revolutionary Smart Chip microprocessor detects barking and automatically increases in intensity the longer barking continues - until your dog stops. No remote needed and no monitoring on your part required. Completely waterproof.Hands-Free - Our revolutionary Smart Chip microprocessor detects barking and automatically increases in intensity the longer barking continues - until your dog stops. No remote needed and no monitoring on your part required. Completely waterproof.",
+     "For Dogs 6-120 lbs - Fits small to medium to large dogs, 3 months old and up. The device is 1. 5” x 1. 5” x 2. 5”. The nylon cinch collar (no holes) can be adjusted to fit the smallest pet. The largest collar diameter is approximately 8” or 25” in circumference.",
+     "No False Triggers - Growling, shaking, scratching or other dogs barking won’t trigger the collar and prevents confusing your pet during the training process. The collar is triggered only by your dog’s bark and includes an overvoltage safety chip.",
+     "Lightweight and Comfortable - The hypoallergenic fabric collar is fully adjustable and designed to distribute the anti-bark device’s light weight across the scruff area of the neck. It’s so comfortable, your pet won’t even know it’s on."
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B0002C7FHC",
+    "title": "PetSafe Basic Bark Control Collar for Dogs 8 lb. and Up, Anti-Bark Training Device, Waterproof, Static Correction, Canine - Automatic Dog Training Collar to Decrease Barking, PBC-102",
+    "brand": "PetSafe",
+    "color": "Black, Red",
+    "bullets": [
+     "SAFELY STOPS BARKING: 6 levels of automatically adjusting static correction help teach your dog to stop excessive barking",
+     "WATERPROOF COLLAR: Train in any environment, indoors or out, with the waterproof collar",
+     "BATTERY POWERED: Uses PetSafe RFA-67 battery (included)",
+     "SIZING: Collar fits dogs 8 lb and up and the adjustable strap fits pets with a neck size up to 27 in",
+     "BARK SOLUTIONS YOU CAN TRUST: For 25 years, we have been the trusted brand in creating safe, high-quality, training products to help you and your pet live happy together"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B086ZNMZ7F",
+    "title": "Flittor Bark Collar, NO Shock Anti Barking Dog Collars with Rechargeable Adjustable Sensitivity and Intensity Beep Vibration - No Harm Shock for Small Medium Large Dogs",
+    "brand": "Flittor",
+    "color": "",
+    "bullets": [
+     "Bark Collar",
+     "Bark Collar",
+     "Bark Collar",
+     "Bark Collar",
+     "Bark Collar"
+    ],
+    "description": "Bark Collar"
+   },
+   {
+    "product_id": "B0872WK74J",
+    "title": "RUFF BOYZ Humane Dog Bark Collar",
+    "brand": "RUFF BOYZ",
+    "color": "White",
+    "bullets": [
+     "Humane Dog Bark Collar",
+     "Humane Dog Bark Collar",
+     "Humane Dog Bark Collar",
+     "Humane Dog Bark Collar"
+    ],
+    "description": "Humane Dog Bark Collar"
+   }
+  ]
+ },
+ "1tb ssd": {
+  "query": "1tb ssd",
+  "department": "Electronics",
+  "n_real_queries": 15,
+  "buyer_vocab": [
+   "ssd",
+   "1tb",
+   "samsung",
+   "external",
+   "tb",
+   "crucial",
+   "x8",
+   "portable",
+   "gaming",
+   "pro",
+   "mac",
+   "m2",
+   "nvme",
+   "evo",
+   "860",
+   "sandisk",
+   "plus",
+   "drive",
+   "hard",
+   "t5",
+   "xbox",
+   "harddrive"
+  ],
+  "products": [
+   {
+    "product_id": "B073H552FJ",
+    "title": "SAMSUNG T5 Portable SSD 1TB - Up to 540MB/s - USB 3.1 External Solid State Drive, Black (MU-PA1T0B/AM)",
+    "brand": "Samsung Electronics",
+    "color": "Black",
+    "bullets": [
+     "Superfast read write speeds: SSD with V-NAND offers ultra-fast data transfer speeds of up to 540MB s (up to 4.9x faster than external HDDs); Ideal for transferring large-sized data including 4K videos, high-resolution photos, games and more",
+     "Compact and portable design: Top to bottom shock resistant metal design fits in the palm of your hand and easily slides in your pocket or purse to take work and entertainment on the go",
+     "Secure encryption: Optional password protection and AES 256-bit hardware encryption keeps your personal and private data more secure",
+     "Seamless connectivity: Includes USB type C to C and USB type C to A cables to connect to PCs, Macs, smartphones and other devices"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B071KGRXRG",
+    "title": "SanDisk Ultra 3D NAND 1TB Internal SSD - SATA III 6 Gb/s, 2.5\"/7mm, Up to 560 MB/s - SDSSDH3-1T00-G25",
+    "brand": "SanDisk",
+    "color": "",
+    "bullets": [
+     "Accelerate your PC for faster boot-up and blazing-fast gaming and graphics",
+     "Ultra-fast: sequential read speeds of up to 560MB/s; sequential write speeds of up to 530MB/s (Based on internal testing; performance may vary depending upon drive capacity, host device, OS and application. 1 megabyte (MB) = 1,000,000 bytes.)",
+     "3D NAND provides greater endurance so your drive lasts longer and uses less power",
+     "nCache 2.0 technology delivers blazing-fast speeds",
+     "Order with your Alexa enabled device. Just ask \"Alexa, order SanDisk Internal SSD.\""
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B077SF8KMG",
+    "title": "Crucial MX500 1TB 3D NAND SATA 2.5 Inch Internal SSD, up to 560MB/s - CT1000MX500SSD1(Z)",
+    "brand": "Crucial",
+    "color": "",
+    "bullets": [
+     "Sequential reads/writes up to 560/510 mb/s and random reads/writes upto 95k/90k on all file types",
+     "Integrated power loss immunity preserves all your saved work if the power unexpectedly gets cut",
+     "AES 256 bit hardware based encryption keeps data safe and secure from hackers and thieves",
+     "Product ships in Amazon Certified frustration free packaging (may differ from Retail Packaging depicted in product collateral)"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B073SB2MXT",
+    "title": "Western Digital 1TB WD Blue 3D NAND Internal PC SSD - SATA III 6 Gb/s, M.2 2280, Up to 560 MB/s - WDS100T2B0B",
+    "brand": "Western Digital",
+    "color": "Blue",
+    "bullets": [
+     "3D NAND SATA SSD for capacities up to 4TB with enhanced reliability; As used for storage capacity, one terabyte (TB) = one trillion bytes. Total accessible capacity varies depending on operating environment",
+     "Sequential read speeds up to 560MB/s and sequential write speeds up to 530MB/seconds; As used for transfer rate or interface, megabyte per second (MB/s) = one million bytes per second and gigabit per second (Gb/s) = one billion bits per second",
+     "An industry leading 1.75M hrs mean time to failure (MTTF) and up to 500 TBs written (TBW) for enhanced reliability; MTTF based on internal testing using Telcordia stress part testing; TBW calculated using Jedec client workload (JESD219).Slumber (mW):56",
+     "WD F.I.T. Lab certification for compatibility with a wide range of computers"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07ZPRJFV1",
+    "title": "Seagate BarraCuda 120 SSD 1TB Internal Solid State Drive – 2.5 Inch SATA 6GB/s for Computer, Desktop, PC & Laptop (ZA1000CM10003)",
+    "brand": "Seagate",
+    "color": "",
+    "bullets": [
+     "Performance Solid State Drive: 2TB, 1TB, 500GB, 250GB",
+     "Maximum sequential read and write speeds up to 560MB/s and 550MB/s",
+     "MTBF of 1.8M hours and TBW up to 600",
+     "Ideal for desktops, laptops, home servers, and gaming PCs",
+     "Included in box: Seagate BarraCuda 120 SSD"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07YD579WM",
+    "title": "Crucial BX500 1TB 3D NAND SATA 2.5-Inch Internal SSD, up to 540MB/s - CT1000BX500SSD1",
+    "brand": "Crucial",
+    "color": "",
+    "bullets": [
+     "Boot up faster. Load files quicker. Improve overall system responsiveness",
+     "300% faster than a typical hard drive",
+     "Improves battery life because it’s 45x more energy efficient than a typical hard drive",
+     "Micron 3D NAND – advancing the world's memory and storage technology for 40 years",
+     "Crucial 3-year limited warranty. Refer to the PDF attached below in Technical Specification for the Manual"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07TBQ637W",
+    "title": "ADATA SU760 1TB 3D NAND 2.5 Inch SATA III Internal SSD (ASU760SS-1TT-C)",
+    "brand": "ADATA",
+    "color": "",
+    "bullets": [
+     "3D TLC NAND 2.5 inch SATA III 6GB/s interface",
+     "Read/Write speed up to 550/520MB/s *May vary by models",
+     "Slc dynamic caching and DRAM buffer for better performance",
+     "Ldpc error correcting code technology",
+     "Free downloadable SSD Toolbox + migration software available"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07ZZYWTBP",
+    "title": "Sabrent Rocket Q 1TB NVMe PCIe M.2 2280 Internal SSD High Performance Solid State Drive R/W 3200/2000MB/s (SB-RKTQ-1TB)",
+    "brand": "SABRENT",
+    "color": "QLC",
+    "bullets": [
+     "M.2 PCIe Gen3 x 4 Interface.",
+     "PCIe 3.1 Compliant / NVMe 1.3 Compliant.",
+     "Power Management Support for APST / ASPM / L1.2.",
+     "Supports SMART and TRIM commands. Supports ONFi 2.3, ONFi 3.0, ONFi 3.2 and ONFi 4.0 interface.",
+     "All Sabrent SSDs come with FREE Sabrent Acronis True Image for Sabrent Software for easy Cloning. For those who require a specific sector size to clone their existing SSDs: A newly released Sabrent utility enables users to re-format the Rocket drive and choose the sector size of their liking, either 512-bytes or 4K bytes."
+    ],
+    "description": ""
+   }
+  ]
+ },
+ "backpack": {
+  "query": "backpack",
+  "department": "Clothing, Shoes & Jewelry",
+  "n_real_queries": 401,
+  "buyer_vocab": [
+   "backpack",
+   "backpacks",
+   "women",
+   "girls",
+   "boys",
+   "laptop",
+   "school",
+   "mini",
+   "bag",
+   "men",
+   "backpacking",
+   "diaper",
+   "travel",
+   "black",
+   "purse",
+   "teen",
+   "jansport",
+   "under",
+   "small",
+   "kids",
+   "water",
+   "nike",
+   "womens",
+   "blue",
+   "big"
+  ],
+  "products": [
+   {
+    "product_id": "B073CNXM95",
+    "title": "Modoker Vintage Laptop Backpack for Women Men,School College Backpack with USB Charging Port Fashion Backpack Fits 15 inch Notebook, Bookbag Grey",
+    "brand": "Modoker",
+    "color": "Grey",
+    "bullets": [
+     "◆ DIMENSION: 11.8\"L x 16.5\"H x 5.1\"W; Capacity: 25L; Fit for Laptop up to 15.6 Inch.",
+     "◆ SPECIAL FUNCTIONS: With External USB charging port & set-in charging cable, Modoker Backpack offer a convenient way for you to charge your electronic device when walking.",
+     "◆ MULTIPLE COMPARTMENTS; Total 6 Compartments to save your belongs well. Backpack strap is well-padded and adjustable to fit your body. Comfort on your back.",
+     "◆ DURABLE FABRIC: Made of High quality 600D Nylon Fabric, Modoker Backpack is Lightweight, Scratch-resistant, Anti-tear & Anti Water Splashing.",
+     "◆ APPLICATIONS: This backpack is perfect to be a daypack. Perfect for going to school, work, weekend get-away, biking, camping, gym, travel, etc."
+    ],
+    "description": "Modoker Vintage Laptop Backpack for Women Men, School College Backpack with USB Charging Port Dimension: 11.8\"L x 16.5\"H x 5.1\"W ; Capacity: 25L ; Package Included: USB Backpack x 1 ✔ Set-in Charging Cable x 1 ✔ STRUCTURE: 1 x Roomy Main Compartment. Keep daily stuff like clothes, folder, books, magazines, power bank etc. 1 x Secondary Pocket with zipper. Keep books, magazines, notebooks, wallet etc. 1 x Laptop Compartment. Fit for laptop up to 15.6 inch. 1 x Front Pocket with zipper. Keep pencil, keys, cards, and some other small items. 2 x Side Pocket. Keep for water bottle, cups, umbrella etc. FEATURE: ① Backpack with USB Charging Port - External USB with built-in charging cable offers a convenient way for you to charge your electronic devices when walking. ② Lightweight Outdoor Backpack - Hight quality 600D Nylon Fabric Material offer Modoker Backpack with a function of scratch-resistant, anti-tear & water resistant. ③ Well-padded. The adjustable and padded shoulder straps can fit your shoulders well. Comfortable on your shoulder and back. APPLICATIONS: The backpack is perfect for daily use. Perfect backpack for college, work, weekend get-away, biking, camping, gym, travel, etc."
+   },
+   {
+    "product_id": "B01HO06HAK",
+    "title": "Backpack for Men,Vaschy Unisex Classic Water-Resistant College School Backpack Bookbag Laptop Backpack Black",
+    "brand": "VASCHY",
+    "color": "Black",
+    "bullets": [
+     "DURABL&CLASSIC:The VASCHY Unisex Classic backpack is made of water resistant durable Polyester which could ensure the backpack lasts for long. The vintage design features a classic silhouette with the diamond shape in front and thicken padded suede-like bottom.",
+     "EASY TO ORGANIZE:Main compartment with double-zipper closure;One exterior zipper pocket; Water-bottle pockets on both sides,padded Ipad/Laptop pocket fits up to 15inch laptop,4 interior zipper pockets,leather zipper puller,adjustable padded Reinforced Strap ,anti-theft back pocket.",
+     "LARGE CAPACITY:External dimensions: 18.5\" x 12.9\" x 5.5\" ( HxLxW); Capacity: 23 Liters Adjustable Shoulder Strap Length: 20-39inch/50-99cm ; Laptop sleeve: 11.4x11.4inch /29x29cm",
+     "NEAT DESIGN:The school backpack hangs nicely and comfortably on your back and shoulders. You can organize your tools with the differently sized pockets. There is plenty of room for your keys, cellphone, wallet, etc. Leather pulls on the zipper and the SBS zippers allows it to slide easily and smoothly. The padded laptop compartment fits your device snugly while the main compartment is best for holding heavy textbooks.",
+     "WATER RESISTANT:The fashion backpack is a heavy-duty water resistant backpack suitable for those who like casual. Its durable material is recommended for students often bringing their college textbooks and notebooks. Shoppers similarly will find comfort with the use of this backpack for their regular grocery shopping."
+    ],
+    "description": "About VASCHY Simple and Neat are the spirits of VASCHY. VASCHY is an active,open-minded,lifestyle brand,dedicated to provide the everyday traveler with the perfect bags and accessories.We continue to manufacture timeless design with the finest quality. Features - Made from High quality durable waterproof lightweight Polyester and featuring a reinforced bottom and detailing. - Fashion design with Camouflage exterior pocket and red zipper - High quality SBS branded zippers with leather zipper puller - Wire port to listen to music on the go - One exterior zippered pockets - Dual ergonomic padded and adjustable reinforced shoulder straps - Strong Hanging Hook,fully padded back panel - Flexible interior pocket for 15 inches laptop or Ipad. - One interior mesh pockets for keys, Four pockets for small things such as calculators,phone,wallets... -Package includes 1 Backpack,2 Extra leather zipper puller,1 Vaschy gift bag. Note: Height of model is 5 feet 9 inches.Age 20 Specifications Capacity: 0.57 cu ft /16.2L / Dimensions: 17.7\" x 11.8\" x 4.7\"/ 45 x 30 x 12cm Shoulder Straps: Adjust from 16\" to 35.8\" / 41 to 91 cm Fabric: Water Resistant Polyester Maximum Laptop Pocket Dimensions: 9\" x 7.67\" x 0.7\"/23 x 19.5 x 1.8 cm Weight: 1.19LB/0.54 kg Notes - The actual color of the backpack maybe slightly different from the picture shown due to the different screen of display or reflecting light when shooting. - 1-2cm error of measuring is a reasonable range due to different measurement methods. - It's can't avoidable that you will receive the backpack with some smells from original material as it's brand new. - The smell will be gone if place the backpack in freely circulating air for 2-5 days."
+   },
+   {
+    "product_id": "B073TXL4KK",
+    "title": "ASPENSPORT Laptop Backpack fit 15.6 inch Laptop Book Bag School Backpack for College Students - Durable Water Repellent - Travel Computer Bag 28L - with Luggage Strap Black",
+    "brand": "ASPEN",
+    "color": "Black",
+    "bullets": [
+     "【DEDICATED LAPTOP COMPARTMENT】This laptop backpack sized 17.5 x12.6 x 7.5 inch, large major compartment is divided into 2 sections - roomy space for textbooks, A4 size binders and bulky clothes; built-in padded Laptop sleeve with velcro closure for most of 15.6 Inch computer or device not exceeding 15”x10”x1”.",
+     "【LOTS OF STORAGE ROOM】3 zippered pockets on front panel for quick access to cell phone, iPad, Kindle or tablet, charger & cables, pen & keys or essentials often-used have their right position. Top pocket lined with fleece especial for prescription eyeglasses; 2 side pockets perfect for umbrella and beverage, it can be stretched with the water bottle oversize up to 40 oz.",
+     "【FUNCTIONAL & PRACTICAL 】Hidden hook in side pocket is a smart design for Anti-Theft to lock the zipper pullers of main pocket to secure your laptop and valuables; LUGGAGE STRAP designed for traveler to fasten the travel backpack for men and women to luggage handle to release shoulders from burden; STERNUM STRAP is helpful to solve the annoying problem that the shoulder straps often slide to the edge of shoulders or slip off while you are running hastily.",
+     "【COMFORTABLE SHOULDER STRAP & BACK SUPPORT】 airflow back panel constructed by thick but soft multi-layer ventilated padding, gives you maximum back support; Breathable & adjustable shoulder straps heavily cushioned, distributing evenly the weight of loading. Best choice as a school backpack for boys, laptop bookbag for college students and Lightweight hiking camping daypack for girls.",
+     "【DURABLE & WELL MADE】 Water Repellant & Tear Resistant Polyester fabric and quality zipper & metal pullers ensure a reliable & lasting usage everyday & weekend. Aspensport backpack will serve you well as professional computer backpack office work bag, college bag pack, students book bag for high / middle school teens and adults. Please feel free to contact us whenever you need help with the item."
+    ],
+    "description": "About ASPENSPORT Brand At ASPENSPORT, our main purpose is to make you to enjoy the best shopping experience. We are committed to providing premium products, competitive low-pricing and excellent customer service Warranty ASPENSPORT BAGS shop offers ONE YEAR warranty We are aiming at making our customers be pleased with both our product and service you received Features: --Material: ASPENSPORT backpack is made from high quality tear and water resistant polyester fabric with high density nylon lining, specially treated for water resistance --Roomy: The laptop computer compartment is friendly allowing you to keep your computer safe while passing through airport security. --Convenient: External USB with set-in charging cable is conveniently used by any electronic equipment anywhere, like Kindle devices and all Micro-USB devices Equipped with A HOLE for HEADPHONE outside, easy access to earphone usage --Classified: Multiple pockets allow you to keep all of your gear secure and organized in its place --Safety: The black rugged handle and lined with steel cable provides strong and long-lasting performance with maximal weight. Also durable two-way wear-resistant metal zipper across the backpack having high explosion protection performance --Straps: Thicken Shoulder Straps combined with Padded Back Cushion brings you a great comfort --Application: Perfect for business trips or weekend getaways or for simply heading to the office or school and home again Package Included: --Backpack*1"
+   },
+   {
+    "product_id": "B07JCP8BF3",
+    "title": "Dinictis 40L Carry on Flight Approved Travel Laptop Backpack for Men Wowen,fit 17 Inch laptop, Business Weekender Bag-Grey",
+    "brand": "Dinictis",
+    "color": "Grey",
+    "bullets": [
+     "Ample Space and Reasonable Design: Dimensional design meets the maximum size allowed by IATA flights, easy to carry around; Capacity: 40 L;Backpack size:19.6*13.8*9.8 INCH; Main compartment size:19.6*12.6*5.5INCH.",
+     "Convenient Travel: The hidden shoulder strap makes the backpack can be carried or lifted, making it easy to carry around; Luggage trolley straps provides easy travel; The main handle and side handles are designed to lift the backpack from multiple angles.",
+     "Easy to Organize: The computer compartment with protective foam pad can store up to 17 inch laptop. With the small item storage bag on the lower front side (there is a key buckle in the storage bag), and a quick access storage bag on the upper front side, you can store and organize all personal belongings conveniently and quickly.",
+     "Durable:The fabric is made of high density scratch resistant and water repellent polyester, and strengthens the key points of force, which provide more durable backpack.",
+     "Comfortable: Thickened sponge handles and shoulder straps provide you with more comfort when you are carrying and gripping the bag; The chest strap relieves shoulder pressure for weight bearing."
+    ],
+    "description": "*Product Specifications* Brand Name: Dinictis Material: High density scratch resistant waterproof polyester Product volume: 40L Product weight: 3.19 lb Product size: 19.6*13.8* 9.8inch Main compartment size:19.6*12.6*5.5inch Suitable for 10.1-inch tablets and 17 inch laptops Waterproof: Splash proof Applicable gender: Unisex Uses: Flight approved travel backpack,carry on backpack,weekender backpack,short-distance travel backpack,business trip,best practical gift *Features* The versatile front pocket: It accommodates small items such as mobile phones, keys, pens, documents, glasses and more. Separate computer compartment: Separate compartments for notebooks and tablets, all protected by a sponge pad, and a flat compartment with a fleece lining to protect the screen. The main compartment: Perfect for store clothes and daily necessities, etc. Inner mesh compartment: Accessible to look for small items such as make-up and toiletries. Adjustable side pocket: For kettles, umbrellas, etc. Back straps: It is an artifact that combines the backpack and the carry on, significantly reducing the burden of travel. Concealed shoulder strap: This bag can be used as a travel backpack or handbag. Flight approved: The product complies with the flight regulations and perfect for a place the bag under the seat and overhead compartment. *About Us* Dinictis has a stylish and creative team. Exquisite and excellent manufacturing process and practicality of products are the concept of creation. Any questions about the product, please feel free to contact us through Amazon, we will reply within 24 hours. Our aim is to enable every customer to enjoy high quality and satisfactory products. We have been improving and innovating to achieve this goal."
+   },
+   {
+    "product_id": "B07KQTFF6G",
+    "title": "NIKE Brasilia X-Large Backpack - 9.0, Volt/Black/White, Misc",
+    "brand": "Nike",
+    "color": "Volt/Black/White",
+    "bullets": [
+     "SPACE FOR ESSENTIALS: Nike Brasilia Backpack features a spacious main compartment and a laptop pocket. Separate sleeve stores your laptop.",
+     "CONVENIENT STORAGE: This backpack has external, small-item pocket offers easily accessible storage. Side pockets make it easy to grab water bottles and energy bars.",
+     "CUSTOMIZABLE FIT: Padded back and adjustable shoulder straps create a snug, comfortable fit.",
+     "NIKE BACKPACK: Imported, spot clean, fabric: 100% polyester, dimensions: 20\" H x 13\" W x 7\" D"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B06XZTZ7GB",
+    "title": "Matein Travel Laptop Backpack, Business Anti Theft Slim Durable Laptops Backpack with USB Charging Port, Water Resistant College School Computer Bag Gifts for Men & Women Fits 15.6 Inch Notebook, Grey",
+    "brand": "MATEIN",
+    "color": "Austere Grey",
+    "bullets": [
+     "★LOTS OF STORAGE SPACE&POCKETS: One separate laptop compartment hold 15.6 Inch Laptop as well as 15 Inch,14 Inch and 13 Inch Laptop. One spacious packing compartment roomy for daily necessities,tech electronics accessories. Front compartment with many pockets, pen pockets and key fob hook, makes your item organized and easier to find",
+     "★COMFY&STURDY: Comfortable soft padded back design with thick but soft multi-panel ventilated padding, gives you maximum back support. Breathable and adjustable shoulder straps relieve the stress of shoulder. Foam padded top handle for a long time carry on",
+     "★FUNCTIONAL&SAFE: A luggage strap allows backpack fit on luggage/suitcase, slide over the luggage upright handle tube for easier carrying. With a hidden anti theft pocket on the back protect your valuable items from thieves. Well made for international airplane travel and day trip as a travel gift for men",
+     "★USB PORT DESIGN: With built in USB charger outside and built in charging cable inside,this usb backpack offers you a more convenient way to charge your phone while walking. It's a great tech gift for him from wife, daughter and son. Please noted that this backpack doesn't power itself, usb charging port only offers an easy access to charge",
+     "★DURABLE MATERIAL&SOLID: Made of Water Resistant and Durable Polyester Fabric with metal zippers. Ensure a secure & long-lasting usage everyday & weekend.Serve you well as professional office work bag,slim USB charging bagpack,college high school big students backpacks for boys,girls,teens"
+    ],
+    "description": ""
+   },
+   {
+    "product_id": "B07CBT2RN4",
+    "title": "ZOMAKE Lightweight Hiking Backpack, 30L Water Resistant Packable Daypack Backpack for Women Men",
+    "brand": "ZOMAKE",
+    "color": "Orange",
+    "bullets": [
+     "🍃0.74LB！LIGHTWEIGHT：Super lightweight and you can easily fold this lightweight backpack into its own pocket for storage, and unfold it when you reach your destination(A true space saver). To avoid overweight charge, simply unfold from your checked bags and use it as a carry on for your excess baggage. A must have for every trip",
+     "🎈30L！ROOMY CAPACITY: A great hiking backpack for day hike or short trips. One main compartment, two zipped front pockets, two side pockets as well as external attachment points. Spacious pockets keep all things organized and separated, It's roomy enough for your laptop, tablet, clothes, towel, journal and a couple beers( if needed) etc",
+     "👍QUALITY UPGRADE：Our small hiking backpack is made with thick sturdy and water resistant material, double-layer bottom piece while strengthen stitching over 28 places, providing extra strength and long-lasting performance. Heavy duty two-way SBS metal zippers across the backpack are convenient to operate it whichever side you prefer",
+     "💥VERSATILE：ZOMAKE Backpack have been tested and proved on countless epic world travel across the world by 50,000+ customers. Ultra-light, Ultra-durable, Ultra-awesome daypack perfect for hiking, camping, traveling, overnight trip, day-to-day use, Disney trip and more. A great gift for men, women, any travel enthusiast",
+     "💯SATISFATION GUARANTEE: We promise to provide the best products and services to all buyers who believe in and choose our products. If your packable backpack has any problems within 90 days, please feel free to contact us and request a free replacement. Add your ZOMAKE backpack to cart, and enjoy taking it on your upcoming trips"
+    ],
+    "description": "ZOMAKE Packable Backpack Hiking Daypack Specifications: Weight:7.8 OZ Capacity:30 liters Compact Size:9.8 x 7.9 x 3.5 inches Unfold size:19.3 x 13.4 x 7 inches Features: Made with high quality water and tear resistant nylon material,with SBS metal zipper and bartack process. Main pocket is Large enough to carry what you need. Pack-in pocket doubles as a inner pocket. Breathable mesh shoulder straps. Bottle holder on the both sides. Easy to adjust the length and lock firmly. Outer smaller pocket great for quick access such as guide books and camera. Perfect for day trips,vacation,travel,day hikes,school,camping and shopping,etc. Package included: 1 x ZOMAKE Packable Backpack"
+   },
+   {
+    "product_id": "B07J31XT3Y",
+    "title": "Under Armour Adult Hustle 4.0 Backpack , White (100)/Pitch Gray , One Size",
+    "brand": "Under Armour",
+    "color": "White (100)/Pitch Gray",
+    "bullets": [
+     "UA Storm technology delivers an element-battling finish to keep your stuff dry",
+     "TONS OF STORAGE: Large, gusseted front laundry/shoe pocket placed at bottom of bag. Two water-repellent front valuables pockets to keep your stuff safe and stay organized. Two side water bottle pockets.",
+     "CAPACITY: Dimensions When Full: 5.9\"W x 13\"H x 19.3\"L. Volume: 26 L"
+    ],
+    "description": ""
+   }
+  ]
+ }
+}

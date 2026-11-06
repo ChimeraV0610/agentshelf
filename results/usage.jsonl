@@ -1,0 +1,5 @@
+{"ts": 1794006424.705109, "model": "ollama:qwen2.5:7b", "tag": "sim:air purifier:2:orig:0", "in": 1640, "out": 649, "cost": 0.0}
+{"ts": 1794006486.5292149, "model": "ollama:qwen2.5:7b", "tag": "sim:air purifier:2:orig:1", "in": 1633, "out": 801, "cost": 0.0}
+{"ts": 1794006517.172437, "model": "ollama:qwen2.5:7b", "tag": "sim:air purifier:2:orig:1", "in": 1633, "out": 801, "cost": 0.0}
+{"ts": 1794006545.370875, "model": "ollama:qwen2.5:7b", "tag": "sim:air purifier:2:orig:2", "in": 1626, "out": 628, "cost": 0.0}
+{"ts": 1794006569.3533282, "model": "ollama:qwen2.5:7b", "tag": "sim:air purifier:2:orig:2", "in": 1626, "out": 628, "cost": 0.0}

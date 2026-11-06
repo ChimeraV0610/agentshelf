@@ -1,0 +1,32 @@
+{
+ "n_pairs": 40000,
+ "exact_rate": 0.4367,
+ "logit_coefficients_standardized": {
+  "query_term_coverage": 0.505,
+  "n_numeric_specs": -0.011,
+  "n_key_attributes": -0.017,
+  "n_bullets": -0.02,
+  "has_description": 0.002,
+  "title_len": -0.148,
+  "fluff_per_100": 0.018
+ },
+ "exact_rate_by_query_term_coverage": {
+  "0-25%": {
+   "exact_rate": 0.312,
+   "n": 8541
+  },
+  "25-50%": {
+   "exact_rate": 0.378,
+   "n": 11937
+  },
+  "50-75%": {
+   "exact_rate": 0.437,
+   "n": 10100
+  },
+  "75-100%": {
+   "exact_rate": 0.623,
+   "n": 9422
+  }
+ },
+ "narrative": "Covering the shopper's own words decides whether a product is judged relevant (shelf entry); specs, attributes and fluff barely move the human relevance label. Which product the agent BUYS among relevant ones has no public labels, so it must be simulated."
+}

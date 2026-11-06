@@ -53,6 +53,8 @@ class LLMClient:
         self.db.commit()
         self._anthropic = None
         self._openai = None
+        self._ollama = None
+        self.sem_local = asyncio.Semaphore(int(CFG["llm"].get("ollama", {}).get("concurrency", 1)))
         self.spent = self._spent_so_far()
         self.stats = {"cached": 0, "calls": 0, "errors": 0}
 
@@ -141,6 +143,30 @@ class LLMClient:
             return {"ok": False, "error": "max_tokens", "raw": choice.message.content or ""}, usage
         return {"ok": True, "raw": choice.message.content or ""}, usage
 
+    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=2, min=2, max=30),
+           retry=retry_if_exception_type(_Retryable), reraise=True)
+    async def _call_ollama(self, model, system, user, schema, max_tokens):
+        """Local model through Ollama's native API; `format` takes a JSON schema for structured output."""
+        import ollama
+
+        ocfg = CFG["llm"].get("ollama", {})
+        if self._ollama is None:
+            self._ollama = ollama.AsyncClient(host=ocfg.get("host", "http://localhost:11434"))
+        try:
+            resp = await self._ollama.chat(
+                model=model,
+                messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
+                format=schema if schema is not None else "json",
+                options={"temperature": 0, "num_ctx": int(ocfg.get("num_ctx", 16384)), "num_predict": max_tokens},
+            )
+        except (ollama.ResponseError, ConnectionError, OSError) as e:
+            raise _Retryable(str(e)) from e
+        usage = {"in": int(getattr(resp, "prompt_eval_count", 0) or 0), "out": int(getattr(resp, "eval_count", 0) or 0)}
+        text = resp.message.content or ""
+        if getattr(resp, "done_reason", "") == "length":
+            return {"ok": False, "error": "max_tokens", "raw": text}, usage
+        return {"ok": True, "raw": text}, usage
+
     # ---------- public API ----------
     async def acall(self, model: str, system: str, user: str, schema: dict | None = None,
                     tag: str = "", max_tokens: int | None = None) -> dict:
@@ -153,13 +179,17 @@ class LLMClient:
         if self.spent >= self.budget:
             raise BudgetExceeded(f"spent ${self.spent:.2f} >= budget ${self.budget:.2f}")
         max_tokens = max_tokens or CFG["llm"]["max_tokens"]
-        async with self.sem:
-            if model.startswith("claude"):
-                out, usage = await self._call_anthropic(model, system, user, schema, max_tokens)
-            elif model.startswith("gpt"):
-                out, usage = await self._call_openai(model, system, user, schema, max_tokens)
-            else:
-                raise ValueError(f"unknown provider for model {model}")
+        if model.startswith("ollama:"):
+            async with self.sem_local:
+                out, usage = await self._call_ollama(model[len("ollama:"):], system, user, schema, max_tokens)
+        else:
+            async with self.sem:
+                if model.startswith("claude"):
+                    out, usage = await self._call_anthropic(model, system, user, schema, max_tokens)
+                elif model.startswith("gpt"):
+                    out, usage = await self._call_openai(model, system, user, schema, max_tokens)
+                else:
+                    raise ValueError(f"unknown provider for model {model}")
         cost = _cost(model, usage["in"], usage["out"])
         self.spent += cost
         self.stats["calls"] += 1
@@ -177,8 +207,16 @@ class LLMClient:
         self._put(key, model, result, usage)
         return {**result, "cached": False}
 
+    def _loop_run(self, coro):
+        """Run a coroutine on one persistent loop so async HTTP clients survive between sync calls."""
+        loop = getattr(self, "_loop", None)
+        if loop is None or loop.is_closed():
+            loop = asyncio.new_event_loop()
+            self._loop = loop
+        return loop.run_until_complete(coro)
+
     def call(self, *args, **kwargs) -> dict:
-        return asyncio.run(self.acall(*args, **kwargs))
+        return self._loop_run(self.acall(*args, **kwargs))
 
     async def amap(self, jobs: list[dict], desc: str = "llm") -> list[dict]:
         """jobs: list of kwargs for acall. Preserves order. Shows a progress bar."""
@@ -196,14 +234,32 @@ class LLMClient:
         return await tqdm_asyncio.gather(*[one(j) for j in jobs], desc=desc)
 
     def map(self, jobs: list[dict], desc: str = "llm") -> list[dict]:
-        return asyncio.run(self.amap(jobs, desc=desc))
+        return self._loop_run(self.amap(jobs, desc=desc))
 
     def summary(self) -> str:
         return (f"calls={self.stats['calls']} cached={self.stats['cached']} errors={self.stats['errors']} "
                 f"spent_total=${self.spent:.2f} (budget ${self.budget:.0f})")
 
 
+def ollama_available(model: str | None = None) -> bool:
+    """True if the Ollama server answers (and, if given, the model is pulled)."""
+    import httpx
+
+    host = CFG["llm"].get("ollama", {}).get("host", "http://localhost:11434")
+    try:
+        tags = httpx.get(f"{host}/api/tags", timeout=3).json().get("models", [])
+    except Exception:  # noqa: BLE001
+        return False
+    if model is None:
+        return True
+    names = {m.get("name", "") for m in tags} | {m.get("name", "").split(":")[0] for m in tags}
+    return model in names or model.split(":")[0] in names
+
+
 def has_api_key(model: str) -> bool:
+    """Whether `model` can be called right now (API key present, or local Ollama model pulled)."""
+    if model.startswith("ollama:"):
+        return ollama_available(model[len("ollama:"):])
     if model.startswith("claude"):
         return bool(os.environ.get("ANTHROPIC_API_KEY"))
     if model.startswith("gpt"):

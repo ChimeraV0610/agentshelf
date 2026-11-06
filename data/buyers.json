@@ -1,0 +1,50 @@
+{
+  "air purifier": [
+    "I need an air purifier for a 300 sq ft bedroom. I have pet allergies, so it must be a true HEPA filter, and quiet enough to sleep next to.",
+    "Looking for an air purifier for a large living room, around 600 sq ft, mainly for wildfire smoke. Replacement filter cost matters to me.",
+    "Small desktop air purifier for a dorm room, under 20 inches tall, with a night light would be nice.",
+    "Something for a nursery: HEPA, no ozone, very quiet on the lowest setting, and a filter change indicator.",
+    "I want an air purifier for my kitchen to remove cooking odors, so it needs an activated carbon filter.",
+    "Air purifier with a washable pre-filter and a timer for my home office, about 200 sq ft."
+  ],
+  "white noise machine": [
+    "A white noise machine for our newborn's nursery with continuous non-looping sound and a volume that goes low enough for a crib.",
+    "Portable sound machine for travel that clips onto a stroller or car seat and runs on a rechargeable battery.",
+    "Sound machine with a night light and a timer; we want it to shut off after 60 minutes.",
+    "A machine with several nature sounds and a fan sound, plugged into the wall, with simple buttons my toddler can't change easily.",
+    "Small white noise machine with a lullaby option for a 3 month old; it must not have a bright screen.",
+    "Compact sound machine I can use at daycare and at home, with a volume limit for infant hearing safety."
+  ],
+  "baby carrier": [
+    "Baby carrier for a newborn around 8 lbs that works without an infant insert, and I want to use it front-facing later. Dad is 6'2\" and mom is 5'3\".",
+    "A hip seat carrier for an 18 month old toddler, up to 35 lbs, for short trips around town.",
+    "Soft wrap-style carrier for a 2 month old for cuddly indoor use, machine washable.",
+    "Ergonomic carrier with lumbar support for long hikes with a 1 year old, breathable mesh for summer.",
+    "Budget carrier for a 6 month old that I can also use for back carry, with a sun hood.",
+    "A carrier certified hip-healthy, adjustable for multiple caregivers, easy to put on alone."
+  ],
+  "bark collar": [
+    "Bark collar for a 12 lb miniature dachshund. I do NOT want shock, only vibration and sound.",
+    "A rechargeable anti-bark collar for a 70 lb German shepherd that barks at the fence; it needs to be waterproof.",
+    "Small dog bark collar with adjustable sensitivity so it doesn't trigger when my other dog barks.",
+    "Humane bark collar with automatic levels for a 30 lb beagle; the battery should last at least a week.",
+    "I need a bark collar that fits a neck size of 10 to 14 inches with a quick-release buckle.",
+    "Vibration-only collar for an anxious rescue dog, lightweight, no spray and no shock."
+  ],
+  "1tb ssd": [
+    "1TB NVMe SSD for a PS5 expansion slot; it needs a heatsink and at least 5500 MB/s read speed.",
+    "A 1TB 2.5 inch SATA SSD to replace the hard drive in a 2015 laptop.",
+    "1TB external portable SSD with USB-C for editing 4K video on a MacBook; fast write speed matters.",
+    "Gen4 M.2 2280 1TB SSD for a gaming PC build, with a 5 year warranty and high TBW endurance.",
+    "Cheapest reliable 1TB internal SSD for a kid's school computer; SATA is fine.",
+    "A rugged 1TB external SSD that is drop resistant and water resistant for field work."
+  ],
+  "backpack": [
+    "Laptop backpack for a 15.6 inch laptop for daily bike commuting, water resistant, with a USB charging port.",
+    "Carry-on travel backpack around 40L that fits under airline seat rules and opens flat like a suitcase.",
+    "Lightweight hiking daypack, 20 to 25 liters, with a hydration sleeve and a hip belt.",
+    "School backpack for a 10 year old, durable, with a padded sleeve for a Chromebook.",
+    "Small anti-theft backpack for city travel with hidden zippers and an RFID pocket.",
+    "Diaper bag backpack with insulated bottle pockets and a changing pad."
+  ]
+}
