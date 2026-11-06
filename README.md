@@ -36,35 +36,22 @@ bash scripts/00_download.sh     # ESCI parquet files -> data/raw/
 
 ## Pipeline
 
+Everything below is one-time, cached, and read by the app from `results/` and `cache/`.
+
 | step | command | output |
 |---|---|---|
-| 0 data | `make data` | `data/processed/{examples_us,products_us,corpus}.parquet`, `reports/data_profile.md` |
-| 2 indices | `make index` | `indices/bm25`, `indices/dense` (bge-small-en-v1.5 + FAISS) |
-| 2 retrieval eval | `make eval-retrieval` | `results/retrieval_eval.json`, `results/full_corpus_ranks.parquet` |
-| 3 tag + sample | `make tag sample` | `data/samples/queries_1000.parquet`, `candidates_1000.parquet` |
-| 4 agents | `make agents-sanity` then `make agents` | `results/agent_runs/*.parquet` (every call cached in `cache/llm_cache.sqlite`) |
-| 5 agent eval | `make agent-eval` | `results/agent_eval.json` + tables |
-| 6 diagnose | `make diagnose` | `results/diagnostics/*.json`, `diagnostics_summary.parquet` |
-| 7 rewrite | `make rewrite` | `results/rewrite/{listings,before_after}.parquet` |
-| 8 rewrite eval | `make rewrite-eval` | `results/rewrite_eval.json`, `headline_table.csv` |
-| demo | `make app` | Streamlit, reads `results/` only |
+| data | `make data` | `data/processed/{examples_us,products_us,corpus}.parquet`, `reports/data_profile.md` |
+| BM25 index | `.venv/bin/python scripts/02_build_indices.py --skip-dense` | `indices/bm25` (dense index is optional and not used by the live flow) |
+| retrieval sanity | BM25 nDCG inside each test query's candidates: see `results/retrieval_eval.json` (0.824 vs random 0.747) | |
+| shelves | `python scripts/11_build_shelves.py` | `data/shelves.json`: 6 real ESCI shelves, 8 Exact products each |
+| evidence | `python scripts/12_relevance_analysis.py` | `results/relevance_analysis.json` (query-term coverage vs human Exact label) |
+| pre-warm / multi-shelf lift | `python scripts/engine_cli.py --all --buyers 6 --rewrite` | cached simulations for every shelf; summary via `scripts/13_live_summary.py` |
+| agent accuracy (optional) | `make tag sample` then `python scripts/06_run_agents.py --model ollama:qwen2.5:7b --limit 200` and `python scripts/07_agent_eval.py` | `results/agent_eval.json`: wrong-buy rate, macro F1, confusion matrix vs ESCI labels |
+| demo | `make app` | Streamlit: Home (4-step live flow) + Evidence |
 
-### Local models with Ollama (no API key)
-
-```bash
-brew install ollama && ollama serve &          # once
-ollama pull qwen2.5:7b                         # ~4.7 GB; qwen2.5:3b is ~2x faster, weaker
-python scripts/06_run_agents.py --model ollama:qwen2.5:7b --limit 20   # measure speed first
-```
-
-Any `--model` (or the `models:` block in `configs/default.yaml`) accepts `ollama:<name>`.
-The client sets `num_ctx` to 16k (Ollama's default context would silently truncate 20-30 candidates)
-and runs local calls with concurrency 2. Budget: a 7B model on an M-series laptop handles roughly
-2-3 queries per minute for the listwise judge, so plan the sample size accordingly (e.g. 300 queries
-for the local agent, or use it as the second panel member on a subset).
-
-Offline plumbing test without any API key: prefix any command with `AGENTSHELF_MOCK=1`.
-Outputs then go to `results_mock/`, `data/samples_mock/` and a separate cache, and the app shows a mock banner.
+All LLM calls go through `src/llm/client.py`: Ollama (`ollama:<model>`), or Anthropic / OpenAI if a key is set.
+Every call is cached in `cache/llm_cache.sqlite` by (model, prompt, schema, tag); `results/usage.jsonl` tracks spend.
+`requirements.lock` pins the exact versions that were tested.
 
 ## Data
 
