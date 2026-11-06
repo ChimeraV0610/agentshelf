@@ -5,3 +5,10 @@
 {"ts": 1794006569.3533282, "model": "ollama:qwen2.5:7b", "tag": "sim:air purifier:2:orig:2", "in": 1626, "out": 628, "cost": 0.0}
 {"ts": 1794006884.010627, "model": "ollama:qwen2.5:7b", "tag": "rw:air purifier:2:r1", "in": 304, "out": 8000, "cost": 0.0}
 {"ts": 1794006914.925698, "model": "ollama:qwen2.5:7b", "tag": "sim:bark collar:B0872WK74J:orig:0", "in": 1476, "out": 708, "cost": 0.0}
+{"ts": 1794007236.668351, "model": "ollama:qwen2.5:7b", "tag": "rw:air purifier:2:r1", "in": 370, "out": 557, "cost": 0.0}
+{"ts": 1794007255.312285, "model": "ollama:qwen2.5:7b", "tag": "rw:air purifier:2:faith:r1", "in": 420, "out": 380, "cost": 0.0}
+{"ts": 1794007285.433012, "model": "ollama:qwen2.5:7b", "tag": "rw:air purifier:2:r2", "in": 614, "out": 743, "cost": 0.0}
+{"ts": 1794007314.97754, "model": "ollama:qwen2.5:7b", "tag": "rw:air purifier:2:faith:r2", "in": 372, "out": 753, "cost": 0.0}
+{"ts": 1794007340.724531, "model": "ollama:qwen2.5:7b", "tag": "sim:air purifier:2:rw:0", "in": 1729, "out": 573, "cost": 0.0}
+{"ts": 1794007384.963395, "model": "ollama:qwen2.5:7b", "tag": "sim:air purifier:2:rw:1", "in": 1722, "out": 1050, "cost": 0.0}
+{"ts": 1794007408.131316, "model": "ollama:qwen2.5:7b", "tag": "sim:air purifier:2:rw:2", "in": 1715, "out": 593, "cost": 0.0}
