@@ -24,4 +24,3 @@ cache/*_mock.sqlite
 
 # local
 .claude/
-reports/data_profile.md
