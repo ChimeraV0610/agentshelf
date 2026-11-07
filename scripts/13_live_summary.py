@@ -35,16 +35,17 @@ def measure(client, model, competitors, listing, buyers, vocab, tag):
     result = simulate(client, model, competitors, listing, buyers, tag=tag)
     if any(row["error"] for row in result["per_buyer"]):
         raise RuntimeError(f"{tag}: buyer simulation failed")
-    metrics = {key: result[key] for key in METRICS if key != "audit_score"}
-    ranks = [row["rank"] for row in result["per_buyer"]]
-    metrics["avg_rank"] = mean(result["n"] if rank is None else rank for rank in ranks)
-    metrics["omitted_count"] = sum(
-        row["rank"] is None or row.get("omitted", False) for row in result["per_buyer"]
-    )
-    metrics["audit_score"] = audit_listing(listing, vocab)["score"]
-    if not result["n_ok"]:
-        metrics["top3_rate"] = None
-    return metrics
+    rows = result["per_buyer"]
+    omitted = [row["rank"] is None or row.get("omitted", False) for row in rows]
+    ranks = [result["n"] if missing else row["rank"] for row, missing in zip(rows, omitted)]
+    return {
+        "pick_rate": result["pick_rate"],
+        "top3_rate": mean(rank <= 3 and not missing for rank, missing in zip(ranks, omitted)),
+        "avg_rank": mean(ranks),
+        "fair_share": result["fair_share"],
+        "audit_score": audit_listing(listing, vocab)["score"],
+        "omitted_count": sum(omitted),
+    }
 
 
 def summarize(client, model, shelves, buyers, n_buyers):

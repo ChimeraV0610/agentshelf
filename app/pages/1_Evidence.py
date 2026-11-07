@@ -49,8 +49,11 @@ else:
     shelves = summary["shelves"]
     categories = [row["category"] for row in shelves]
     fig = go.Figure()
-    for phase in ("before", "after"):
-        fig.add_bar(x=categories, y=[row[phase]["pick_rate"] for row in shelves], name=phase.title())
+    fig.add_bar(x=categories, y=[row["before"]["pick_rate"] for row in shelves], name="Before")
+    faithfulness = ["Passed" if row["faithfulness_passed"] else "Did not pass" for row in shelves]
+    fig.add_bar(x=categories, y=[row["after"]["pick_rate"] for row in shelves], name="After",
+                customdata=faithfulness,
+                hovertemplate="%{x}<br>Pick rate: %{y:.1%}<br>Faithfulness: %{customdata}<extra>After</extra>")
     fig.add_scatter(x=categories, y=[row["before"]["fair_share"] for row in shelves],
                     mode="lines+markers", line=dict(dash="dash"), name="Fair share")
     fig.update_layout(barmode="group", yaxis_title="Pick rate", yaxis_tickformat=".0%")
@@ -59,3 +62,6 @@ else:
     st.metric("Average pick-rate lift", f"{100 * lift['delta']:+.1f} pp")
     st.caption(f"95% paired bootstrap CI across shelves: {100 * lift['ci_low']:+.1f} to "
                f"{100 * lift['ci_high']:+.1f} percentage points.")
+    passed = faithfulness.count("Passed")
+    st.caption(f"{passed} of {len(shelves)} rewrites passed the faithfulness audit. "
+               "The lift and confidence interval include all tested rewrites.")
