@@ -38,7 +38,9 @@ def rule_check(original_text: str, title: str, bullets: list[str]) -> dict:
     if len(bullets) != cfg["n_bullets"]:
         issues.append(f"expected {cfg['n_bullets']} bullets, got {len(bullets)}")
     words = _WORD.findall(low)
-    repeated = [" ".join(g) for g, c in _ngrams(words).items() if c >= 3]
+    orig_ngrams = _ngrams(_WORD.findall(original_text.lower()))
+    # stuffing = a phrase repeated 3+ times that the ORIGINAL did not itself repeat
+    repeated = [" ".join(g) for g, c in _ngrams(words).items() if c >= 3 and orig_ngrams.get(g, 0) < 2]
     if repeated:
         issues.append(f"repeated phrases (keyword stuffing?): {repeated[:5]}")
     return {"pass": not issues, "issues": issues}

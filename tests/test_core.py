@@ -61,3 +61,9 @@ def test_stuffed_listing_adds_query_terms():
     fields = {"title": "Insulated Bottle", "bullets_list": ["keeps cold"]}
     st = stuffed_listing(fields, ["hydro flask 32 oz", "32 oz water bottle"], n_bullets=5)
     assert "32" in st["title"] and "oz" in st["title"] and len(st["bullets"]) == 5
+
+
+def test_rule_check_allows_repeats_present_in_original():
+    orig = "Filters 1252 sq ft with 1 air change. Filters 626 sq ft with 2 air changes. Filters 417 sq ft with 3 air changes."
+    ok = rule_check(orig, "Air Purifier", ["Coverage: 1252 sq ft with 1 air change, 626 sq ft with 2 air changes, 417 sq ft with 3 air changes", "a", "b", "c", "d"])
+    assert not any("repeated" in i for i in ok["issues"]), ok
