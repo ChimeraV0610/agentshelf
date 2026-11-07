@@ -1,0 +1,58 @@
+
+== air purifier: mine = 'PurifierForAir | The Best Air Purifier Product Recommendation'
+   audit 16/100: Shoppers search with words the listing never uses: purifiers, filter, hepa, home, honeywell, blue, pure, blueair; Fewer than 3 comparable numeric specs (size, weight, capacity, runtime, coverage...); Does not state: size / dimensions, weight, material, compatibility, warranty, certification, package contents
+   buyer 1/6: rank 7/8 picked=False 0.0s err=None | This listing is for a product recommendation app, not an air purifier.
+   buyer 2/6: rank 5/8 picked=False 0.0s err=None | PurifierForAir provides product recommendations and guides but does not offer a specific a
+   buyer 3/6: rank 8/8 picked=False 0.0s err=None | This is a product recommendation service and not an air purifier, so it does not meet the 
+   buyer 4/6: rank 8/8 picked=False 0.0s err=None | This product is a recommendation service and does not provide an air purifier, so it does 
+   buyer 5/6: rank 8/8 picked=False 0.0s err=None | Provides free product recommendations and guides but does not list specific product featur
+   buyer 6/6: rank 7/8 picked=False 0.0s err=None | This air purifier offers product recommendations and guides, which could be useful for som
+   BEFORE pick 0.00 (fair 0.12) top3 0.00 avg rank 7.2 | missing: ['activated carbon filter', 'coverage area', 'exact coverage area for a 600 sq ft room', 'n/a', 'replacement filter cost']
+   REWRITE passed=False rounds=2 title='PurifierForAir Air Purifier'
+      - Brand: PurifierForAir
+      - Color: n/a
+      - Product Recommendations: Free Product Recommendations
+      - Optimization Guides: Air Purifier Optimization Guides
+      - Buyer's Guides: Air Purifier Buyer's Guides
+      - Allergy Tips: Allergy Friendly Tips
+      - News: Air Purifier News
+      seller_to_confirm: ['Dimensions', 'Capacity', 'Material', 'Set or Pack Count', 'Color', 'Compatible Appliance or Bed Size', 'Dishwasher Safe', 'Oven Safe', 'Intended Room']
+   audit after 44/100
+   buyer 1/6: rank None/8 picked=False 0.0s
+   buyer 2/6: rank 5/8 picked=False 0.0s
+   buyer 3/6: rank 8/8 picked=False 0.0s
+   buyer 4/6: rank 7/8 picked=False 0.0s
+   buyer 5/6: rank 8/8 picked=False 0.0s
+   buyer 6/6: rank 7/8 picked=False 0.0s
+   AFTER  pick 0.00 (fair 0.12) top3 0.00 avg rank 7.0
+calls=0 cached=16 errors=0 spent_total=$0.00 (budget $90)
+
+== white noise machine: mine = 'Hatch Rest+ Baby Sound Machine, Night Light, Time-to-Rise Plus Audio Monitor, Wh'
+   audit 41/100: Shoppers search with words the listing never uses: sleeping, projector, adults, crib, doom, hallway, letsfit, portable; Fewer than 3 comparable numeric specs (size, weight, capacity, runtime, coverage...); Does not state: size / dimensions, weight, material, compatibility, warranty, certification, package contents
+   buyer 1/6: rank 5/8 picked=False 0.0s err=None | c04 is a multi-functional device, but the listing does not specify the number of sounds or
+   buyer 2/6: rank 6/8 picked=False 0.0s err=None | c01 is a comprehensive device that includes a sound machine, night light, and time-to-rise
+   buyer 3/6: rank 7/8 picked=False 0.0s err=None | c08 provides a night light and multiple soothing sounds, which are useful. However, it doe
+   buyer 4/6: rank 7/8 picked=False 0.0s err=None | Hatch Rest+ Baby Sound Machine has a child lock feature.
+   buyer 5/6: rank 7/8 picked=False 0.0s err=None | It has a lullaby option, but the screen color is not specified.
+   buyer 6/6: rank 1/8 picked=True 0.0s err=None | Hatch Rest+ Baby Sound Machine explicitly mentions it is a sound machine and includes a vo
+   BEFORE pick 0.17 (fair 0.12) top3 0.17 avg rank 5.5 | missing: ['exact battery life', 'fan sound', 'it does not explicitly state that it will shut off after 60 minutes.', 'it does not mention a timer.', 'it is white.']
+   REWRITE passed=True rounds=1 title='Hatch Baby Rest+ Baby Sound Machine, Night Light, Time-to-Rise, Audio Monitor, White Noise, Toddler '
+      - Two-way Audio Monitor: Listen and talk to your child from another room through your phone with clear transmission. Requirements-App available in the App Store (iOS 14 or higher) and Google Play Store (Marshmallow or higher).
+      - Sound Machine: Select from a library of sounds, including lullabies and white noise.
+      - Night Light: Choose from a rainbow of colors to make it your own.
+      - Time-to-Rise Alarm Clock: Set programs to cue your child for tricky transitions, including naps, bedtime, and morning.
+      - Alexa Control: Use Alexa to control your Rest+ so you can change lights, sounds, and more without lifting a finger.
+      seller_to_confirm: ['Size', 'Count', 'Material', 'Safety Certification', 'Gender']
+   audit after 50/100
+   buyer 1/6: rank 5/8 picked=False 0.0s
+   buyer 2/6: rank 2/8 picked=False 0.0s
+   buyer 3/6: rank 8/8 picked=False 0.0s
+   buyer 4/6: rank 8/8 picked=False 0.0s
+   buyer 5/6: rank 7/8 picked=False 48.4s
+   buyer 6/6: rank 1/8 picked=True 97.6s
+   AFTER  pick 0.17 (fair 0.12) top3 0.33 avg rank 5.2
+calls=2 cached=12 errors=0 spent_total=$0.00 (budget $90)
+
+== baby carrier: mine = 'BABYBJORN Baby Carrier Original - Black, Cotton'
+   audit 30/100: Shoppers search with words the listing never uses: sign, do, not, touch, front, back, breathable, lilibaby; Fewer than 3 comparable numeric specs (size, weight, capacity, runtime, coverage...); Does not state: size / dimensions, weight, warranty, certification, package contents
+   buyer 1/6: rank 2/8 picked=False 107.2s err=None | Two safe and ergonomic carrying positions, suitable for newborns, no infant insert needed,

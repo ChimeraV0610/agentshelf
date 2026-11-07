@@ -1,0 +1,19 @@
+
+== air purifier: mine = 'Bissell Smart Purifier with HEPA and Carbon Filters for Large Room and Home, Qui'
+   audit 49/100: Shoppers search with words the listing never uses: purifiers, honeywell, blue, pure, blueair, 211, true, levoit; Fewer than 3 comparable numeric specs (size, weight, capacity, runtime, coverage...); Does not state: size / dimensions, material, package contents, weight
+   buyer 1/6: rank 4/8 picked=False 0.0s err=None | 3-Stage Filtration, includes a pre-filter, activated carbon filter, and an H13 HEPA filter
+   buyer 2/6: rank 1/8 picked=True 0.0s err=None | 3-Stage Filtration for Simply Clean Air, includes a pre-filter, activated carbon filter, a
+   buyer 3/6: rank 7/8 picked=False 0.0s err=None | Bissell Smart Purifier has 3-stage filtration and auto mode, but lacks a night light featu
+   buyer 4/6: rank 2/8 picked=False 0.0s err=None | Bissell Smart Purifier has a medical-grade HEPA filter that captures 99.97% of particles 0
+   buyer 5/6: rank 2/8 picked=False 0.0s err=None | This product includes an activated carbon filter and is designed for large rooms, which co
+   buyer 6/6: rank 5/8 picked=False 0.0s err=None | It has a 3-stage filtration system including a pre-filter, HEPA filter, and carbon filter,
+   BEFORE pick 0.17 (fair 0.12) top3 0.50 avg rank 3.5 | missing: ['cadr for smoke and odor', 'dimensions and weight', 'exact coverage area', 'exact coverage area for a 600 sq ft room', 'filter change indicator']
+   REWRITE passed=True rounds=1 title='Bissell Smart Purifier with HEPA and Carbon Filters for Large Room and Home'
+      - 3-Stage Filtration: 3-Stage Filtration for Simply Clean Air. Includes a pre-filter, activated carbon filter, and an H13 HEPA filter to capture large and fine particles, home odors, odors from pet, and VOCs.
+      - Medical-grade HEPA Filter: Medical-grade HEPA Filter. Captures 99.97% of particles 0.3 microns and smaller when on lowest fan speed, helping to remove airborne allergens and irritants like dust, pet dander, pollen, and smoke like that from wildfires, cooking, and smoking.
+      - Honeycomb-Structured Carbon Filter: Honeycomb-Structured Carbon Filter. Filter contains thousands of activated carbon pellets engineered to capture gases, volatile organic compounds (VOCs) and common household odors including odors from pets, cooking and smoke.
+      - Large Room Coverage: Large Room Coverage and AHAM Certified. Filters 1252 sq. ft. with 1 air change/hour. Filters 626 sq. ft. with 2 air changes/hour. Filters 417 sq. ft. with 3 air changes/hour. Filters rooms 258 sq. ft. providing 4.8 air changes/hour.
+      - Low Energy and Quiet: Low Energy and Library Quiet. Energy Star rated and equipped with 5 fan speeds the lowest of which is as quiet as a library.
+      seller_to_confirm: ['Dimensions', 'Capacity', 'Material', 'Set or Pack Count', 'Compatible Appliance or Bed Size', 'Dishwasher or Oven Safety', 'Intended Room']
+   audit after 62/100
+   buyer 1/6: rank 4/8 picked=False 41.2s

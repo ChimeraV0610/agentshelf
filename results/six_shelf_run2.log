@@ -1,0 +1,201 @@
+
+== air purifier: mine = 'Bissell Smart Purifier with HEPA and Carbon Filters for Large Room and Home, Qui'
+   audit 48/100: Shoppers search with words the listing never uses: purifiers, honeywell, blue, pure, blueair, 211, true, levoit; Fewer than 3 comparable numeric specs (size, weight, capacity, runtime, coverage...); Does not state: size / dimensions, weight, material, compatibility, warranty, package contents
+   buyer 1/6: rank 4/8 picked=False 77.7s err=None | 3-Stage Filtration, includes a pre-filter, activated carbon filter, and an H13 HEPA filter
+   buyer 2/6: rank 1/8 picked=True 132.5s err=None | 3-Stage Filtration for Simply Clean Air, includes a pre-filter, activated carbon filter, a
+   buyer 3/6: rank 7/8 picked=False 25.6s err=None | Bissell Smart Purifier has 3-stage filtration and auto mode, but lacks a night light featu
+   buyer 4/6: rank 2/8 picked=False 37.2s err=None | Bissell Smart Purifier has a medical-grade HEPA filter that captures 99.97% of particles 0
+   buyer 5/6: rank 2/8 picked=False 28.7s err=None | This product includes an activated carbon filter and is designed for large rooms, which co
+   buyer 6/6: rank 5/8 picked=False 31.3s err=None | It has a 3-stage filtration system including a pre-filter, HEPA filter, and carbon filter,
+   BEFORE pick 0.17 (fair 0.12) top3 0.50 avg rank 3.5 | missing: ['cadr for smoke and odor', 'dimensions and weight', 'exact coverage area', 'exact coverage area for a 600 sq ft room', 'filter change indicator']
+   REWRITE passed=False rounds=2 title='Bissell Smart Purifier with HEPA and Carbon Filters for Large Room and Home, 2609A'
+      - 3-Stage Filtration: 3-Stage Filtration for Simply Clean Air. Includes a pre-filter, activated carbon filter, and an H13 HEPA filter to capture large and fine particles, home odors, odors from pet, and VOCs.
+      - Medical-grade HEPA Filter: Medical-grade HEPA Filter. Captures 99.97% of particles 0.3 microns and smaller when on lowest fan speed, helping to remove airborne allergens and irritants like dust, pet dander, pollen, and smoke like that from wildfires, cooking, and smoking.
+      - Honeycomb-Structured Carbon Filter: Honeycomb-Structured Carbon Filter. Filter contains thousands of activated carbon pellets engineered to capture gases, volatile organic compounds (VOCs) and common household odors including odors from pets, cooking and smoke.
+      - Large Room Coverage: Large Room Coverage and AHAM Certified. Filters 1252 sq. ft. with 1 air change/hour. Filters 626 sq. ft. with 2 air changes/hour. Filters 417 sq. ft. with 3 air changes/hour. Filters rooms 258 sq. ft. providing 4.8 air changes/hour.
+      - Low Energy and Quiet: Low Energy and Library Quiet. Energy Star rated and equipped with 5 fan speeds the lowest of which is as quiet as a library.
+      seller_to_confirm: ['Dimensions', 'Material', 'Pack Count', 'Dishwasher or Oven Safety']
+   audit after 65/100
+   buyer 1/6: rank 4/8 picked=False 34.0s
+   buyer 2/6: rank 1/8 picked=True 115.2s
+   buyer 3/6: rank 8/8 picked=False 41.4s
+   buyer 4/6: rank 1/8 picked=True 71.3s
+   buyer 5/6: rank 2/8 picked=False 62.1s
+   buyer 6/6: rank 4/8 picked=False 59.5s
+   AFTER  pick 0.33 (fair 0.12) top3 0.50 avg rank 3.3
+calls=16 cached=0 errors=1 spent_total=$0.00 (budget $90)
+
+== white noise machine: mine = 'Portable White Noise Sound Machine for Baby Sleeping - 17 Soothing Sounds | 8 Ni'
+   audit 48/100: Shoppers search with words the listing never uses: projector, adults, crib, doom, hallway, letsfit, owl, skiphop; Fewer than 3 comparable numeric specs (size, weight, capacity, runtime, coverage...); Does not state: weight, material, warranty, certification, package contents
+   buyer 1/6: rank 4/8 picked=False 63.0s err=None | This product has 17 soothing sounds and an 8-color night light, which are useful. However,
+   buyer 2/6: rank 1/8 picked=True 25.6s err=None | 17 Soothing Sounds, USB Rechargeable
+   buyer 3/6: rank 6/8 picked=False 27.6s err=None | c08 provides a night light and 17 soothing sounds, but does not mention a timer or specifi
+   buyer 4/6: rank 4/8 picked=False 27.4s err=None | Has 17 soothing sounds, including fan and nature sounds, and a night light. However, it do
+   buyer 5/6: rank 3/8 picked=False 26.6s err=None | It has a lullaby option and does not have a bright screen.
+   buyer 6/6: rank 1/8 picked=True 29.3s err=None | c01 provides 17 soothing sounds, a night light, and a child safety lock, which are all men
+   BEFORE pick 0.33 (fair 0.12) top3 0.50 avg rank 3.2 | missing: ['child-proof buttons', 'clip-on functionality for stroller or car seat', 'it does not explicitly state that it does not have a bright screen.', 'non-looping sound feature', 'specific sound options']
+Traceback (most recent call last):
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 82, in <module>
+    main()
+    ~~~~^^
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 78, in main
+    run_one(c, args.model, args.buyers, args.rewrite, args.mine)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 53, in run_one
+    rw = rewrite(client, mine, STATIC_PROFILES.get(shelf["department"], ""), model, model, tag=f"rw:{cat}:{i}")
+  File "/Users/chimerav/Desktop/agentshelf/src/engine/rewrite.py", line 50, in rewrite
+    res = client.call(model=model, system=system, user=user, schema=REWRITE_SCHEMA, tag=f"{tag}:r{rnd}", max_tokens=1800)
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 219, in call
+    return self._loop_run(self.acall(*args, **kwargs))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 216, in _loop_run
+    return loop.run_until_complete(coro)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/asyncio/base_events.py", line 724, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 207, in acall
+    self._put(key, model, result, usage)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 89, in _put
+    self.db.execute("INSERT OR REPLACE INTO cache VALUES (?,?,?,?,?)",
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    (key, model, json.dumps(response, ensure_ascii=False), json.dumps(usage), time.time()))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: attempt to write a readonly database
+
+== baby carrier: mine = 'BABYBJORN Baby Carrier Original - Black, Cotton'
+   audit 30/100: Shoppers search with words the listing never uses: sign, do, not, touch, front, back, breathable, lilibaby; Fewer than 3 comparable numeric specs (size, weight, capacity, runtime, coverage...); Does not state: size / dimensions, weight, warranty, certification, package contents
+   buyer 1/6: rank 2/8 picked=False 0.0s err=None | Two safe and ergonomic carrying positions, suitable for newborns, no infant insert needed,
+   buyer 2/6: rank 5/8 picked=False 64.3s err=None | BABYBJORN Baby Carrier Original is suitable for newborns to approximately 12 months and do
+   buyer 3/6: rank 6/8 picked=False 60.5s err=None | It is suitable for newborns and provides essential closeness and contact, but it does not 
+   buyer 4/6: rank 5/8 picked=False 33.5s err=None | This carrier is suitable for newborns to approximately 12 months and provides essential cl
+   buyer 5/6: rank 6/8 picked=False 33.5s err=None | BABYBJORN Baby Carrier Original supports back carry but does not mention a sun hood.
+   buyer 6/6: rank 4/8 picked=False 32.8s err=None | Provides essential closeness and support for baby's head, neck, spine and hips. It also me
+   BEFORE pick 0.00 (fair 0.12) top3 0.17 avg rank 4.7 | missing: ['carrying positions for the toddler are not specified.', 'convertible carrying positions', "dad's height compatibility", 'ease of putting on alone', 'it does not mention if it is soft wrap-style.']
+Traceback (most recent call last):
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 82, in <module>
+    main()
+    ~~~~^^
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 78, in main
+    run_one(c, args.model, args.buyers, args.rewrite, args.mine)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 53, in run_one
+    rw = rewrite(client, mine, STATIC_PROFILES.get(shelf["department"], ""), model, model, tag=f"rw:{cat}:{i}")
+  File "/Users/chimerav/Desktop/agentshelf/src/engine/rewrite.py", line 50, in rewrite
+    res = client.call(model=model, system=system, user=user, schema=REWRITE_SCHEMA, tag=f"{tag}:r{rnd}", max_tokens=1800)
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 219, in call
+    return self._loop_run(self.acall(*args, **kwargs))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 216, in _loop_run
+    return loop.run_until_complete(coro)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/asyncio/base_events.py", line 724, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 207, in acall
+    self._put(key, model, result, usage)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 89, in _put
+    self.db.execute("INSERT OR REPLACE INTO cache VALUES (?,?,?,?,?)",
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    (key, model, json.dumps(response, ensure_ascii=False), json.dumps(usage), time.time()))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: attempt to write a readonly database
+
+== bark collar: mine = 'UPGRADED Q6 Rechargeable Bark Collar - Smart Barking Detection Module w/Triple S'
+   audit 62/100: Does not state: size / dimensions, compatibility, warranty, package contents; Only 4 bullet points (aim for 5+, each 'Attribute: fact'); No description
+   buyer 1/6: rank 6/8 picked=False 33.5s err=None | This collar uses shock, which does not align with the customer's preference for only vibra
+   buyer 2/6: rank 1/8 picked=True 26.0s err=None | This collar is waterproof and suitable for dogs up to 120 lbs, including a German Shepherd
+   buyer 3/6: rank 4/8 picked=False 31.9s err=None | This collar has a smart detection module and three training modes, including vibration, be
+   buyer 4/6: rank 4/8 picked=False 28.9s err=None | This collar has a smart barking detection module and adjustable sensitivity, which could b
+   buyer 5/6: rank 4/8 picked=False 29.5s err=None | Sizing information is provided and fits the customer's neck size range of 10 to 14 inches,
+   buyer 6/6: rank 4/8 picked=False 61.5s err=None | This collar has vibration and shock modes, which does not fit the customer's request for a
+   BEFORE pick 0.17 (fair 0.12) top3 0.17 avg rank 3.8 | missing: ['battery life', 'battery life duration', 'color', 'exact number of vibration and shock levels', 'exact weight range for a 30 lb beagle']
+   REWRITE passed=True rounds=1 title='TBI Pro Bark Collar - Smart Barking Detection for Small, Medium, Large Dogs & Breeds - IPx7 Waterpro'
+      - Microprocessor Controlled Bark Detection: QUALCOMM MICROPROCESSOR CONTROLLED BARK DETECTION. Breakthrough technology and innovative upgrades were implemented in the advanced version of the No Bark collar featuring the Intelligent Anti-Injury Chip. The collar has 5 levels of adjustable sensitivity and 3 training modes – beep, vibration, and gentle, safe shock, effectively stopping the barking with no harm to the dogs of all types. | ✅ DIGITAL DISPLAY SHOWCASING HIGH-TECH DESIGN. The adjustable digital screen displays the level of vibration, shock, and sensitivity. In accordance with the nature and behavior of your pet, you can choose the appropriate training mode for your dog to stop barking. | ✅ THE HIGH-QUALITY RECHARGEABLE BATTERY WITH UP TO 14 DAYS PER 1 CHARGE! The collar contains the most intelligent barking detection system, which prevents false triggering, hence, only your dog's barking can trigger the collar, but not the barking of other nearby dogs. To ensure the safety and security of your pet, there is a built-in no bark receiver with an automatic protection mode, which deactivates the collar if activated 7 times in 1 minute, and resumes its operation after one minute. | ✅ IPX7 WATERPROOF DESIGN. IPX7 solid and lightweight material allows you to safely use the collar indoors and outdoors in all weather conditions. Note: it is better to take off the collar while swimming.
+      - Digital Display: DIGITAL DISPLAY SHOWCASING HIGH-TECH DESIGN. The adjustable digital screen displays the level of vibration, shock, and sensitivity. In accordance with the nature and behavior of your pet, you can choose the appropriate training mode for your dog to stop barking.
+      - Battery Life: THE HIGH-QUALITY RECHARGEABLE BATTERY WITH UP TO 14 DAYS PER 1 CHARGE!
+      - Waterproof: IPX7 WATERPROOF DESIGN. IPX7 solid and lightweight material allows you to safely use the collar indoors and outdoors in all weather conditions. Note: it is better to take off the collar while swimming.
+      - Training Modes: The collar has 5 levels of adjustable sensitivity and 3 training modes – beep, vibration, and gentle, safe shock, effectively stopping the barking with no harm to the dogs of all types.
+      seller_to_confirm: ['Animal Type', 'Breed Size', 'Age Stage', 'Flavor', 'Weight or Count', 'Material', 'Intended Use']
+   audit after 78/100
+   buyer 1/6: rank 5/8 picked=False 28.2s
+   buyer 2/6: rank 1/8 picked=True 41.7s
+   buyer 3/6: rank 4/8 picked=False 41.0s
+   buyer 4/6: rank 2/8 picked=False 32.7s
+   buyer 5/6: rank 4/8 picked=False 27.8s
+   buyer 6/6: rank 4/8 picked=False 32.2s
+   AFTER  pick 0.17 (fair 0.12) top3 0.33 avg rank 3.3
+calls=14 cached=0 errors=0 spent_total=$0.00 (budget $90)
+
+== 1tb ssd: mine = 'Sabrent Rocket Q 1TB NVMe PCIe M.2 2280 Internal SSD High Performance Solid Stat'
+   audit 53/100: Shoppers search with words the listing never uses: samsung, external, tb, crucial, x8, portable, gaming, pro; Does not state: weight, material, compatibility, warranty, certification, package contents; No description
+   buyer 1/6: rank 1/8 picked=True 34.6s err=None | This product is the only NVMe SSD and meets the read speed requirement of 5500 MB/s.
+   buyer 2/6: rank 5/8 picked=False 39.8s err=None | It is a NVMe PCIe SSD, which is not compatible with the 2.5 inch SATA interface required b
+   buyer 3/6: rank 8/8 picked=False 31.2s err=None | It is an NVMe PCIe M.2 SSD with very fast write speeds up to 3200MB/s, but it is not porta
+   buyer 4/6: rank 1/8 picked=True 36.0s err=None | This is the only NVMe M.2 2280 SSD, which is suitable for a gaming PC build. It has high r
+Traceback (most recent call last):
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 82, in <module>
+    main()
+    ~~~~^^
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 78, in main
+    run_one(c, args.model, args.buyers, args.rewrite, args.mine)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 47, in run_one
+    s0 = simulate(client, model, competitors, mine, needs, tag=f"sim:{cat}:{i}:orig",
+                  progress=lambda k, n, r: print(f"   buyer {k}/{n}: rank {r['rank']}/{r['n']} picked={r['picked']} {r['seconds']}s err={r['error']} | {r['reason'][:90] if r['reason'] else ''}"))
+  File "/Users/chimerav/Desktop/agentshelf/src/engine/simulate.py", line 60, in simulate
+    res = client.call(model=model, system=SIMULATE_SYSTEM, user=render_user(need, payload), schema=SIMULATE_SCHEMA, tag=f"{tag}:{b}", max_tokens=1500)
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 219, in call
+    return self._loop_run(self.acall(*args, **kwargs))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 216, in _loop_run
+    return loop.run_until_complete(coro)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/asyncio/base_events.py", line 724, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 207, in acall
+    self._put(key, model, result, usage)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 89, in _put
+    self.db.execute("INSERT OR REPLACE INTO cache VALUES (?,?,?,?,?)",
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    (key, model, json.dumps(response, ensure_ascii=False), json.dumps(usage), time.time()))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: attempt to write a readonly database
+
+== backpack: mine = 'Under Armour Adult Hustle 4.0 Backpack , White (100)/Pitch Gray , One Size'
+   audit 53/100: Shoppers search with words the listing never uses: backpacks, women, girls, boys, laptop, school, mini, men; Does not state: weight, material, compatibility, warranty, certification, package contents; Only 3 bullet points (aim for 5+, each 'Attribute: fact')
+   buyer 1/6: rank 6/8 picked=False 52.3s err=None | Under Armour Adult Hustle 4.0 Backpack is water-repellent but does not mention a laptop co
+Traceback (most recent call last):
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 82, in <module>
+    main()
+    ~~~~^^
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 78, in main
+    run_one(c, args.model, args.buyers, args.rewrite, args.mine)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/scripts/engine_cli.py", line 47, in run_one
+    s0 = simulate(client, model, competitors, mine, needs, tag=f"sim:{cat}:{i}:orig",
+                  progress=lambda k, n, r: print(f"   buyer {k}/{n}: rank {r['rank']}/{r['n']} picked={r['picked']} {r['seconds']}s err={r['error']} | {r['reason'][:90] if r['reason'] else ''}"))
+  File "/Users/chimerav/Desktop/agentshelf/src/engine/simulate.py", line 60, in simulate
+    res = client.call(model=model, system=SIMULATE_SYSTEM, user=render_user(need, payload), schema=SIMULATE_SCHEMA, tag=f"{tag}:{b}", max_tokens=1500)
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 219, in call
+    return self._loop_run(self.acall(*args, **kwargs))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 216, in _loop_run
+    return loop.run_until_complete(coro)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/asyncio/base_events.py", line 724, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 207, in acall
+    self._put(key, model, result, usage)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chimerav/Desktop/agentshelf/src/llm/client.py", line 89, in _put
+    self.db.execute("INSERT OR REPLACE INTO cache VALUES (?,?,?,?,?)",
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    (key, model, json.dumps(response, ensure_ascii=False), json.dumps(usage), time.time()))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: attempt to write a readonly database
