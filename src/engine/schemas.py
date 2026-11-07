@@ -1,27 +1,36 @@
 """JSON schemas for the live engine (simulate + rewrite). Subset of JSON Schema that Ollama/Anthropic/OpenAI accept."""
 
+BUYER_CONSTRAINTS_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["hard_constraints", "preferences"],
+    "properties": {
+        "hard_constraints": {"type": "array", "items": {"type": "string"}},
+        "preferences": {"type": "array", "items": {"type": "string"}},
+    },
+}
+
 SIMULATE_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["ranking", "pick", "pick_reason"],
+    "required": ["ranking"],
     "properties": {
         "ranking": {
             "type": "array",
             "items": {
                 "type": "object",
                 "additionalProperties": False,
-                "required": ["id", "rank", "reason", "missing_facts"],
+                "required": ["id", "rank", "hard_constraint_status", "reason", "missing_facts"],
                 "properties": {
                     "id": {"type": "string", "description": "candidate id such as c01"},
                     "rank": {"type": "integer", "description": "1 = best fit for this customer"},
+                    "hard_constraint_status": {"type": "string", "enum": ["met", "conflict", "unknown"]},
                     "reason": {"type": "string", "description": "one sentence: why this rank, citing listing facts"},
                     "missing_facts": {"type": "array", "items": {"type": "string"},
                                       "description": "facts the customer needs that this listing does not state (at most 2)"},
                 },
             },
         },
-        "pick": {"type": "string", "description": "candidate id to buy"},
-        "pick_reason": {"type": "string"},
     },
 }
 

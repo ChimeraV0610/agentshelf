@@ -45,6 +45,7 @@ def measure(client, model, competitors, listing, buyers, vocab, tag):
         "fair_share": result["fair_share"],
         "audit_score": audit_listing(listing, vocab)["score"],
         "omitted_count": sum(omitted),
+        "no_purchase_count": result["no_purchase_count"],
     }
 
 
