@@ -62,7 +62,7 @@ def _missing_table(s: dict):
                 continue
             key = txt.lower()
             if key not in rows:
-                rows[key] = {"missing fact": txt[0].upper() + txt[1:], "buyers who asked": 0, "example request": b["need"][:90]}
+                rows[key] = {"missing fact": txt[0].upper() + txt[1:], "buyers who asked": 0}
             rows[key]["buyers who asked"] += 1
     if not rows:
         return None
@@ -233,8 +233,7 @@ def show_sim(s: dict, title: str):
         st.markdown("**What buyers needed but could not find in my listing**")
         st.dataframe(gaps, hide_index=True, use_container_width=True,
                      column_config={"missing fact": st.column_config.TextColumn(width="large"),
-                                    "buyers who asked": st.column_config.NumberColumn(width="small"),
-                                    "example request": st.column_config.TextColumn(width="large")})
+                                    "buyers who asked": st.column_config.NumberColumn(width="small")})
     if s.get("omitted_count"):
         st.caption(f"{s['omitted_count']} buyer(s) left my listing out of their ranking; counted as last place.")
     if s["n_ok"] < s["n_buyers"]:
