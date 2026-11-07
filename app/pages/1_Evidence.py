@@ -26,30 +26,45 @@ else:
     faithfulness = ["Passed" if row["faithfulness_passed"] else "Did not pass" for row in shelves]
     categories = [row["category"] for row in shelves]
 
-    st.caption(f"{summary['model']} · {len(shelves)} shelves · {shelves[0]['n_buyers']} buyer scenarios per shelf")
+    st.subheader("How often did the AI pick our product?")
+    st.caption("Same product, competitors and buyer requests before and after the rewrite.")
     pick, confidence, audit = st.columns(3)
-    pick.metric("Average pick rate",
-                f"{averages['before']['pick_rate']:.1%} → {averages['after']['pick_rate']:.1%}",
-                f"{100 * lift['delta']:+.1f} pp")
-    confidence.metric("95% paired bootstrap CI",
+    pick.metric("Average chance of being picked",
+                f"{averages['before']['pick_rate']:.0%} → {averages['after']['pick_rate']:.0%}",
+                f"{100 * lift['delta']:+.1f} pp", delta_color="off")
+    confidence.metric("Estimated change (95% interval)",
                       f"{100 * lift['ci_low']:+.1f} to {100 * lift['ci_high']:+.1f} pp")
-    audit.metric("Rewrites that passed faithfulness", f"{faithfulness.count('Passed')} / {len(shelves)}")
+    audit.metric("Rewrites that passed the fact check", f"{faithfulness.count('Passed')} / {len(shelves)}")
 
     fig = go.Figure()
-    fig.add_bar(x=categories, y=[row["before"]["pick_rate"] for row in shelves],
-                name="Before", marker_color="#64748B")
-    fig.add_bar(x=categories, y=[row["after"]["pick_rate"] for row in shelves],
-                name="After", marker_color="#0F766E", customdata=faithfulness,
-                hovertemplate="%{x}<br>Pick rate: %{y:.1%}<br>Faithfulness: %{customdata}<extra>After</extra>")
-    fig.add_scatter(x=categories, y=[row["before"]["fair_share"] for row in shelves],
-                    mode="lines+markers", line=dict(color="#C2410C", dash="dash"), name="Fair share")
+    for phase, color in (("before", "#64748B"), ("after", "#0F766E")):
+        rates = [row[phase]["pick_rate"] for row in shelves]
+        counts = [f"{round(rate * row['n_buyers'])}/{row['n_buyers']}" for rate, row in zip(rates, shelves)]
+        fig.add_bar(
+            x=rates, y=categories, orientation="h", name=phase.title(), marker_color=color,
+            text=counts, textposition="outside", cliponaxis=False, customdata=faithfulness,
+            hovertemplate="%{y}<br>Picked %{text} times (%{x:.0%})"
+                          + ("<br>Fact check: %{customdata}" if phase == "after" else "")
+                          + f"<extra>{phase.title()}</extra>",
+        )
+
+    fair_shares = [row["before"]["fair_share"] for row in shelves]
+    if len(set(fair_shares)) == 1:
+        fig.add_vline(x=fair_shares[0], line_color="#C2410C", line_dash="dash")
+    else:
+        fig.add_scatter(x=fair_shares, y=categories, mode="markers+lines",
+                        line=dict(color="#C2410C", dash="dash"), name="Equal-chance baseline")
     fig.update_layout(
-        barmode="group", yaxis_title="Pick rate", yaxis_tickformat=".0%",
-        legend=dict(orientation="h", y=1.12), margin=dict(l=0, r=0, t=45, b=0),
+        barmode="group", height=465, xaxis_title="Share of buyers who picked our product",
+        xaxis=dict(tickformat=".0%", range=[0, min(1.09, max(.35, max(
+            row[phase]["pick_rate"] for row in shelves for phase in ("before", "after")
+        ) + .09))]),
+        yaxis=dict(autorange="reversed"), legend=dict(orientation="h", y=1.10),
+        margin=dict(l=0, r=25, t=35, b=0),
     )
     st.plotly_chart(fig, width="stretch")
-    st.caption("Fair share is the chance of a pick if all listings are equally likely. "
-               "The lift and interval include all tested rewrites.")
+    st.caption("The dashed line shows the baseline if every product has an equal chance. "
+               "The average and interval include all rewrites. pp = percentage points.")
 
 st.divider()
 st.header("Amazon ESCI relevance evidence")
@@ -59,18 +74,19 @@ if not f.exists():
     st.info("Run `python scripts/12_relevance_analysis.py` first.")
 else:
     ra = json.loads(f.read_text())
-    st.subheader("Relevance (getting onto the shelf) is about using the shopper's words")
+    st.subheader("Do listings that use more of the shopper’s words match better?")
     df = pd.DataFrame([{"query-term coverage": k, "share judged Exact": v["exact_rate"], "n": v["n"]} for k, v in ra["exact_rate_by_query_term_coverage"].items()])
-    fig = px.bar(df, x="query-term coverage", y="share judged Exact", text=df["share judged Exact"].map(lambda v: f"{v:.0%}"))
+    fig = px.bar(df, x="query-term coverage", y="share judged Exact",
+                 labels={"query-term coverage": "Share of shopper’s search words found in the listing",
+                         "share judged Exact": "Share rated an exact match"},
+                 text=df["share judged Exact"].map(lambda v: f"{v:.0%}"))
     fig.update_layout(yaxis_tickformat=".0%", height=350, margin=dict(l=0, r=0, t=10, b=0))
     st.plotly_chart(fig, use_container_width=True)
     coef = pd.DataFrame(sorted(ra["logit_coefficients_standardized"].items(), key=lambda x: -abs(x[1])), columns=["feature", "standardized logit coefficient"])
-    c1, c2 = st.columns([1, 1])
-    c1.dataframe(coef, hide_index=True, use_container_width=True)
-    c2.markdown(f"**{ra['n_pairs']:,} US query-product pairs** from Amazon ESCI, human-labelled. "
-                "Covering the shopper's own words is the only feature that moves the Exact label; specs, attributes and fluff barely matter for relevance.")
-    c2.info(ra["narrative"])
-    st.caption("Which product an agent BUYS among relevant ones has no public labels. That is what the live simulation on the main page measures.")
+    st.caption(f"Amazon ESCI · {ra['n_pairs']:,} search–product pairs rated by people.")
+    with st.expander("How we measured relevance"):
+        st.info(ra["narrative"])
+        st.dataframe(coef, hide_index=True, width="stretch")
 
 ev = ROOT / "results" / "agent_eval.json"
 if ev.exists():
