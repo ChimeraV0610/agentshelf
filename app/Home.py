@@ -45,6 +45,30 @@ def fields_of(p: dict) -> dict:
             "description_full": p.get("description", ""), "description": (p.get("description") or "")[:600]}
 
 
+
+
+import re as _re
+
+_GAP_PREFIX = _re.compile(r"^(it |the (listing|backpack|product) )?(does not|doesn't|did not|didn't) (mention|specify|state|say|indicate|list)( if| whether| the| that| any| its)?\s*", _re.I)
+
+
+def _missing_table(s: dict):
+    """Collapse the buyers' free-text 'missing facts' into one row per gap with a count and an example request."""
+    rows: dict[str, dict] = {}
+    for b in s["per_buyer"]:
+        for m in b.get("missing_facts") or []:
+            txt = _GAP_PREFIX.sub("", str(m).strip()).strip(" .;:")
+            if not txt or txt.lower() in {"n/a", "none"}:
+                continue
+            key = txt.lower()
+            if key not in rows:
+                rows[key] = {"missing fact": txt[0].upper() + txt[1:], "buyers who asked": 0, "example request": b["need"][:90]}
+            rows[key]["buyers who asked"] += 1
+    if not rows:
+        return None
+    return pd.DataFrame(sorted(rows.values(), key=lambda r: -r["buyers who asked"]))
+
+
 def pct(x):
     return "n/a" if x is None or x != x else f"{100 * x:.0f}%"
 
@@ -204,8 +228,13 @@ def show_sim(s: dict, title: str):
     df = pd.DataFrame(s["per_buyer"])[["need", "rank", "picked", "reason", "missing_facts", "picked_instead", "omitted", "error"]]
     df["missing_facts"] = df["missing_facts"].map(lambda m: ", ".join(m) if isinstance(m, list) else "")
     st.dataframe(df, hide_index=True, use_container_width=True)
-    if s["missing_facts"]:
-        st.warning("Facts the buyers wanted but could not find in my listing: " + "; ".join(s["missing_facts"][:10]))
+    gaps = _missing_table(s)
+    if gaps is not None:
+        st.markdown("**What buyers needed but could not find in my listing**")
+        st.dataframe(gaps, hide_index=True, use_container_width=True,
+                     column_config={"missing fact": st.column_config.TextColumn(width="large"),
+                                    "buyers who asked": st.column_config.NumberColumn(width="small"),
+                                    "example request": st.column_config.TextColumn(width="large")})
     if s.get("omitted_count"):
         st.caption(f"{s['omitted_count']} buyer(s) left my listing out of their ranking; counted as last place.")
     if s["n_ok"] < s["n_buyers"]:
