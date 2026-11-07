@@ -115,8 +115,7 @@ class Catalog:
             brands = self.products["product_brand"].dropna().str.lower()
             self._brand_tokens = {b.strip() for b in brands.unique() if b.strip() and " " not in b.strip() and len(b.strip()) > 2}
             self._brand_tokens -= {"backpack", "bottle", "kids", "baby", "home", "pro", "plus", "mini", "smart", "light", "men", "women"}
-        first = {b.split()[0] for b in self.products["product_brand"].dropna().str.lower().unique() if " " in b}
-        return buyer_vocab_from_queries(queries, top_n=25, drop=self._brand_tokens | first, min_count=2)
+        return buyer_vocab_from_queries(queries, top_n=25, drop=self._brand_tokens, min_count=2)
 
 
 def fetch_amazon(asin: str, timeout: float = 12.0) -> dict | None:
