@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import sqlite3
+from contextlib import closing
 from statistics import mean
 
 from engine_cli import (
@@ -12,8 +14,21 @@ from engine_cli import (
 
 from src.analysis.rewrite_eval import paired_bootstrap
 from src.config import path
+from src.llm.client import LLMClient
 
 METRICS = ("pick_rate", "top3_rate", "avg_rank", "fair_share", "audit_score")
+
+
+class CacheOnlyClient:
+    def __init__(self, db):
+        self.db = db
+
+    def call(self, *, model, system, user, schema, tag, max_tokens):
+        key = LLMClient.key(model, system, user, schema, tag)
+        row = self.db.execute("SELECT response FROM cache WHERE key=?", (key,)).fetchone()
+        if row is None:
+            raise RuntimeError(f"cache miss: {tag} ({model})")
+        return json.loads(row[0])
 
 
 def measure(client, model, competitors, listing, buyers, vocab, tag):
@@ -32,17 +47,19 @@ def measure(client, model, competitors, listing, buyers, vocab, tag):
     return metrics
 
 
-def summarize(client, model, shelves, buyers):
+def summarize(client, model, shelves, buyers, n_buyers):
     rows = []
     for category, shelf in shelves.items():
         products = shelf["products"]
-        eligible = [i for i, p in enumerate(products) if len(p["title"]) >= 40 and len(p["bullets"]) >= 3]
-        if not eligible:
-            raise ValueError(f"{category}: no eligible listing")
-        i = eligible[weakest_index({**shelf, "products": [products[j] for j in eligible]})]
-        mine = fields_of(products[i])
+        i = weakest_index(shelf)
+        product = products[i]
+        if len(product["title"]) < 40 or len(product["bullets"]) < 3:
+            raise ValueError(f"{category}: engine_cli selection {i} does not meet the listing requirements")
+        mine = fields_of(product)
         competitors = [p for j, p in enumerate(products) if j != i]
-        needs = buyers[category]
+        needs = buyers[category][:n_buyers]
+        if len(needs) != n_buyers:
+            raise ValueError(f"{category}: expected {n_buyers} buyer scenarios, found {len(needs)}")
         vocab = shelf["buyer_vocab"]
         before = measure(client, model, competitors, mine, needs, vocab, f"sim:{category}:{i}:orig")
         rw = rewrite(client, mine, STATIC_PROFILES.get(shelf["department"], ""), model, model, tag=f"rw:{category}:{i}")
@@ -67,10 +84,23 @@ def summarize(client, model, shelves, buyers):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default="ollama:qwen2.5:7b")
+    parser.add_argument("--buyers", type=int, default=6, help="number of buyer scenarios per shelf")
+    parser.add_argument("--cache-only", action="store_true", help="stop at the first cache miss without calling Ollama")
     args = parser.parse_args()
+    if args.buyers < 1:
+        parser.error("--buyers must be positive")
     if not args.model.startswith("ollama:") or not args.model.removeprefix("ollama:"):
         parser.error("--model must be a local Ollama model (ollama:<name>)")
-    summary = summarize(get_client(), args.model, load_shelves(), load_buyers())
+    inputs = args.model, load_shelves(), load_buyers(), args.buyers
+    try:
+        if args.cache_only:
+            cache_uri = path("cache").as_uri() + "?mode=ro"
+            with closing(sqlite3.connect(cache_uri, uri=True)) as db:
+                summary = summarize(CacheOnlyClient(db), *inputs)
+        else:
+            summary = summarize(get_client(), *inputs)
+    except (RuntimeError, ValueError, sqlite3.Error) as exc:
+        parser.exit(1, f"{exc}\n")
     output = path("results") / "live_summary.json"
     output.write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
     print(f"Saved {output}")
