@@ -10,20 +10,21 @@ from src.engine.schemas import REWRITE_SCHEMA
 from src.rewrite.faithfulness import original_text_blob, parse_llm_check, rule_check
 
 REWRITE_SYSTEM = """You are rewriting an Amazon listing so that an AI shopping agent, which reads only the text, can find and
-compare every decision-relevant fact. You must use ONLY facts stated in the ORIGINAL listing. Never invent
+compare every decision-relevant fact. Use ONLY facts stated in the ORIGINAL listing. Never invent
 specifications, materials, compatibility, certifications, quantities, warranty terms or use cases.
+Do not copy anything from these instructions into the listing; every word must come from the original.
 
 Produce:
 1. title: brand (if known), product category, then the most decisive specs, max {title_max} characters, no filler words.
-2. bullets: 5 to 7 items, each a short label and ONE factual statement of at most 20 words
-   ("Capacity: 32 oz", "Filter: true HEPA H13"), each with the exact span of the original text that supports it.
-3. attributes: a table of at most 10 concrete attributes the original states (name/value/evidence). Never write
-   "n/a" rows: an attribute the original does not state goes into seller_to_confirm instead.
-If the original states few or no concrete facts, keep the title short and factual and put the missing items
-under seller_to_confirm; do not pad.
+2. bullets: 5 to 7 items. Each item has a short label (one attribute name) and ONE fact of at most 15 words.
+   The fact must not repeat the label and must not paste a whole original bullet. Include the exact span of
+   the original text that supports it.
+3. attributes: a table of at most 8 concrete attributes the original states (name / value / evidence).
+   Never write "n/a" rows; an attribute the original does not state goes into seller_to_confirm instead.
 4. seller_to_confirm: attributes shoppers in this category usually ask for ({dept_profile}) that the original
    listing does NOT state. Do not guess their values.
-Return JSON only."""
+If the original states few concrete facts, keep everything short and put the missing items under
+seller_to_confirm; do not pad or repeat. Return JSON only."""
 
 
 def render_system(dept_profile: str) -> str:
