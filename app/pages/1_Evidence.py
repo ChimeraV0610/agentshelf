@@ -12,7 +12,47 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[2]
 
 st.set_page_config(page_title="Evidence · AgentShelf", page_icon="📊", layout="wide")
-st.title("Evidence from 600k human relevance judgements")
+st.title("AgentShelf Evidence")
+
+st.header("Live demo results")
+live = ROOT / "results" / "live_summary.json"
+if not live.exists():
+    st.info("Live results will appear here after the six-shelf Ollama evaluation is ready.")
+else:
+    summary = json.loads(live.read_text())
+    shelves = summary["shelves"]
+    averages = summary["averages"]
+    lift = averages["paired_bootstrap"]["pick_rate"]
+    faithfulness = ["Passed" if row["faithfulness_passed"] else "Did not pass" for row in shelves]
+    categories = [row["category"] for row in shelves]
+
+    st.caption(f"{summary['model']} · {len(shelves)} shelves · {shelves[0]['n_buyers']} buyer scenarios per shelf")
+    pick, confidence, audit = st.columns(3)
+    pick.metric("Average pick rate",
+                f"{averages['before']['pick_rate']:.1%} → {averages['after']['pick_rate']:.1%}",
+                f"{100 * lift['delta']:+.1f} pp")
+    confidence.metric("95% paired bootstrap CI",
+                      f"{100 * lift['ci_low']:+.1f} to {100 * lift['ci_high']:+.1f} pp")
+    audit.metric("Rewrites that passed faithfulness", f"{faithfulness.count('Passed')} / {len(shelves)}")
+
+    fig = go.Figure()
+    fig.add_bar(x=categories, y=[row["before"]["pick_rate"] for row in shelves],
+                name="Before", marker_color="#64748B")
+    fig.add_bar(x=categories, y=[row["after"]["pick_rate"] for row in shelves],
+                name="After", marker_color="#0F766E", customdata=faithfulness,
+                hovertemplate="%{x}<br>Pick rate: %{y:.1%}<br>Faithfulness: %{customdata}<extra>After</extra>")
+    fig.add_scatter(x=categories, y=[row["before"]["fair_share"] for row in shelves],
+                    mode="lines+markers", line=dict(color="#C2410C", dash="dash"), name="Fair share")
+    fig.update_layout(
+        barmode="group", yaxis_title="Pick rate", yaxis_tickformat=".0%",
+        legend=dict(orientation="h", y=1.12), margin=dict(l=0, r=0, t=45, b=0),
+    )
+    st.plotly_chart(fig, width="stretch")
+    st.caption("Fair share is the chance of a pick if all listings are equally likely. "
+               "The lift and interval include all tested rewrites.")
+
+st.divider()
+st.header("Amazon ESCI relevance evidence")
 
 f = ROOT / "results" / "relevance_analysis.json"
 if not f.exists():
@@ -39,29 +79,3 @@ if ev.exists():
     for m, r in e["models"].items():
         wb = r["wrong_buy"]
         st.metric(f"{m}: agent picked a non-Exact product", f"{100*wb['wrong_buy_rate']:.0f}% (CI {100*wb['ci_low']:.0f}–{100*wb['ci_high']:.0f}%)")
-
-st.subheader("Live listing rewrite across six shelves")
-live = ROOT / "results" / "live_summary.json"
-if not live.exists():
-    st.info("Run `.venv/bin/python scripts/13_live_summary.py` to generate the live comparison.")
-else:
-    summary = json.loads(live.read_text())
-    shelves = summary["shelves"]
-    categories = [row["category"] for row in shelves]
-    fig = go.Figure()
-    fig.add_bar(x=categories, y=[row["before"]["pick_rate"] for row in shelves], name="Before")
-    faithfulness = ["Passed" if row["faithfulness_passed"] else "Did not pass" for row in shelves]
-    fig.add_bar(x=categories, y=[row["after"]["pick_rate"] for row in shelves], name="After",
-                customdata=faithfulness,
-                hovertemplate="%{x}<br>Pick rate: %{y:.1%}<br>Faithfulness: %{customdata}<extra>After</extra>")
-    fig.add_scatter(x=categories, y=[row["before"]["fair_share"] for row in shelves],
-                    mode="lines+markers", line=dict(dash="dash"), name="Fair share")
-    fig.update_layout(barmode="group", yaxis_title="Pick rate", yaxis_tickformat=".0%")
-    st.plotly_chart(fig, use_container_width=True)
-    lift = summary["averages"]["paired_bootstrap"]["pick_rate"]
-    st.metric("Average pick-rate lift", f"{100 * lift['delta']:+.1f} pp")
-    st.caption(f"95% paired bootstrap CI across shelves: {100 * lift['ci_low']:+.1f} to "
-               f"{100 * lift['ci_high']:+.1f} percentage points.")
-    passed = faithfulness.count("Passed")
-    st.caption(f"{passed} of {len(shelves)} rewrites passed the faithfulness audit. "
-               "The lift and confidence interval include all tested rewrites.")
