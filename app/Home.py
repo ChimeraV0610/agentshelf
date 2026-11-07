@@ -16,7 +16,7 @@ from src.engine.audit import audit_listing  # noqa: E402
 from src.engine.fetch import Catalog, fetch_amazon, generate_buyers, parse_asin  # noqa: E402
 from src.engine.rewrite import apply_rewrite, rewrite  # noqa: E402
 from src.engine.simulate import simulate  # noqa: E402
-from src.live import available_models  # noqa: E402
+from src.live import available_models, guess_department  # noqa: E402
 from src.llm.client import get_client  # noqa: E402
 from src.rewrite.dept_profile import STATIC_PROFILES  # noqa: E402
 from src.shelves import load_buyers, load_shelves  # noqa: E402
@@ -81,8 +81,9 @@ st.caption(f"Quick-demo shelf: “{shelf['query']}” ({len(shelf['products'])} 
 st.header("0 · Your listing")
 mode = st.radio("", ["Paste an Amazon link or ASIN", "Pick one of the shelf products as mine", "Paste the listing text"],
                 horizontal=True, label_visibility="collapsed")
-audits0 = [audit_listing(fields_of(p), shelf["buyer_vocab"])["score"] for p in shelf["products"]]
+audits0 = [audit_listing(fields_of(p), shelf["buyer_vocab"], shelf["department"])["score"] for p in shelf["products"]]
 shelf_vocab, shelf_needs, competitors_note = shelf["buyer_vocab"], needs, f"the other {len(shelf['products']) - 1} products on this shelf"
+department = shelf["department"]
 if mode.startswith("Paste an Amazon"):
     with st.form("link"):
         link = st.text_input("Amazon product link or ASIN", placeholder="https://www.amazon.com/dp/B071D58ZY5 or B071D58ZY5")
@@ -124,13 +125,14 @@ if mode.startswith("Paste an Amazon"):
     shelf_needs = L["buyers"][:n_buyers]
     competitors_note = L["how"]
     mine_key = f"link:{L['asin']}"
+    department = guess_department(mine)
     st.success(f"ASIN {L['asin']} from {L['source']} · competitors: {L['how']} · {L.get('buyers_note', '')}")
     with st.expander("Competitors on the shelf"):
         for c in competitors:
             st.markdown(f"- {c['title'][:110]}")
 elif mode.startswith("Pick"):
     labels = [f"{a:>3}/100 · {p['title'][:90]}" for a, p in zip(audits0, shelf["products"])]
-    full = [audit_listing(fields_of(p), shelf["buyer_vocab"]) for p in shelf["products"]]
+    full = [audit_listing(fields_of(p), shelf["buyer_vocab"], shelf["department"]) for p in shelf["products"]]
     real = [i for i, a in enumerate(full) if a["dimensions"]["numeric specs"]["score"] > 0 or a["dimensions"]["key attributes"]["score"] > 0] or list(range(len(audits0)))
     default = min(real, key=lambda i: audits0[i])  # weakest listing that still states at least one real spec/attribute
     choice = st.selectbox("Shelf product (audit score · title)", labels, index=default)
@@ -163,7 +165,7 @@ if st.session_state.get("mine_key") != mine_key:
 
 # ---------------- step 1: audit ----------------
 st.header("1 · Audit: is this listing agent-friendly?")
-a0 = audit_listing(mine, shelf_vocab)
+a0 = audit_listing(mine, shelf_vocab, department)
 c1, c2 = st.columns([1, 3])
 c1.metric("Agent-friendliness", f"{a0['score']} / 100")
 with c2:
@@ -244,7 +246,7 @@ if "sim0" in st.session_state:
     if "rw" in st.session_state:
         rw = st.session_state["rw"]
         mine1 = st.session_state["mine1"]
-        a1 = audit_listing(mine1, shelf_vocab)
+        a1 = audit_listing(mine1, shelf_vocab, department)
         l, r = st.columns(2)
         with l:
             st.markdown(f"**Before · audit {a0['score']}/100**")

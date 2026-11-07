@@ -24,10 +24,28 @@ def _tokens(s: str) -> list[str]:
     return _WORD.findall(s.lower())
 
 
-def audit_listing(fields: dict, buyer_vocab: list[str] | None = None) -> dict:
+# Which of the KEY_ATTRS an agent actually filters on, per department. Unlisted departments use all seven.
+DEPARTMENT_ATTRS = {
+    "Electronics": ["compatibility", "size / dimensions", "certification", "package contents", "warranty"],
+    "Home & Kitchen": ["size / dimensions", "material", "certification", "package contents", "weight"],
+    "Clothing, Shoes & Jewelry": ["size / dimensions", "material", "weight", "package contents"],
+    "Beauty & Personal Care": ["size / dimensions", "certification", "package contents"],
+    "Health & Household": ["certification", "package contents", "size / dimensions"],
+    "Grocery": ["size / dimensions", "package contents", "certification"],
+    "Toys & Games": ["certification", "package contents", "size / dimensions", "compatibility"],
+    "Sports & Outdoors": ["size / dimensions", "weight", "material", "certification"],
+    "Tools, Automotive & Garden": ["compatibility", "size / dimensions", "material", "warranty", "certification"],
+    "Office, Books & Media": ["size / dimensions", "compatibility", "package contents"],
+    "Pet Supplies": ["size / dimensions", "weight", "material", "certification"],
+    "Baby & Other": ["certification", "size / dimensions", "weight", "material"],
+}
+
+
+def audit_listing(fields: dict, buyer_vocab: list[str] | None = None, department: str | None = None) -> dict:
     """fields: title, brand, color, bullets_list, description_full.
 
     buyer_vocab: frequent terms from real shopper queries for this category (not the simulated buyers).
+    department: weights the key-attribute check to what shoppers in that department filter on.
     Returns {'score': int, 'dimensions': {name: {'score': 0-20, 'detail': str}}, 'issues': [str]}.
     """
     title = fields.get("title", "")
@@ -57,10 +75,13 @@ def audit_listing(fields: dict, buyer_vocab: list[str] | None = None) -> dict:
     if n_specs < 3:
         issues.append("Fewer than 3 comparable numeric specs (size, weight, capacity, runtime, coverage...)")
 
-    # 3 key attributes agents filter on
-    found = {k: bool(re.search(rx, text, re.I)) for k, rx in KEY_ATTRS.items()}
+    # 3 key attributes agents filter on (weighted by department)
+    wanted = DEPARTMENT_ATTRS.get(department or "", list(KEY_ATTRS))
+    found = {k: bool(re.search(KEY_ATTRS[k], text, re.I)) for k in wanted}
     n_found = sum(found.values())
-    dims["key attributes"] = {"score": round(20 * n_found / len(KEY_ATTRS)), "detail": "states " + ", ".join(k for k, v in found.items() if v) if n_found else "states none"}
+    label = f" ({department} shoppers filter on these)" if department in DEPARTMENT_ATTRS else ""
+    dims["key attributes"] = {"score": round(20 * n_found / len(wanted)),
+                              "detail": ("states " + ", ".join(k for k, v in found.items() if v) if n_found else "states none") + label}
     lacking = [k for k, v in found.items() if not v]
     if lacking:
         issues.append("Does not state: " + ", ".join(lacking))
@@ -97,7 +118,8 @@ def audit_listing(fields: dict, buyer_vocab: list[str] | None = None) -> dict:
     return {"score": score, "dimensions": dims, "issues": issues}
 
 
-def buyer_vocab_from_queries(queries: list[str], top_n: int = 25, drop: set[str] | None = None) -> list[str]:
+def buyer_vocab_from_queries(queries: list[str], top_n: int = 25, drop: set[str] | None = None, min_count: int = 1) -> list[str]:
+    """Terms ranked by how many distinct queries contain them; min_count filters one-off noise."""
     stop = {"for", "the", "and", "with", "a", "an", "of", "to", "in", "on", "my", "best", "new", "cheap"} | (drop or set())
-    c = Counter(w for q in queries for w in set(_tokens(q)) if w not in stop and len(w) > 1)
-    return [w for w, _ in c.most_common(top_n)]
+    c = Counter(w for q in queries for w in set(_tokens(q)) if w not in stop and len(w) > 2)
+    return [w for w, n in c.most_common(top_n) if n >= min_count]

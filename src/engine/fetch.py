@@ -76,6 +76,8 @@ class Catalog:
                     return [self.record(p) for p in pids], f"products humans labelled Exact for the same {len(queries)} real search(es) as this ASIN", queries
         q = fields["title"]
         ids, _ = self.bm25.search([q], k=n * 6)
+        if not hasattr(self, "_query_table"):
+            self._query_table = self.examples.drop_duplicates("query_id")[["query_id", "query"]]
         pids, per_brand, seen_title = [], {}, set()
         for p in ids[0]:  # diversify: at most 2 per brand, no near-duplicate titles
             if p == asin:
@@ -90,8 +92,18 @@ class Catalog:
             pids.append(p)
             if len(pids) == n:
                 break
-        queries = self.examples[self.examples["product_id"].isin(pids)]["query"].unique().tolist()[:50]
-        return [self.record(p) for p in pids], "closest listings among 1.2M US products (BM25 on the title)", queries
+        recs = [self.record(p) for p in pids]
+        # category terms = words shared by most competitor titles (and not brands) -> all real queries that use them
+        from collections import Counter
+
+        tok = Counter(w for r in recs for w in set(re.findall(r"[a-z]{3,}", r["title"].lower())))
+        brands = {clean_text(r["brand"]).lower() for r in recs}
+        generic = {"for", "with", "and", "the", "men", "women", "mens", "womens", "kids", "travel", "home", "new", "large", "small", "set", "pack", "black", "white"}
+        cat_terms = [w for w, c in tok.most_common(12) if c >= max(3, len(recs) // 2) and w not in brands and w not in generic][:1]
+        qt = getattr(self, "_query_table", self.examples.drop_duplicates("query_id")[["query_id", "query"]])
+        mask = qt["query"].str.lower().str.contains("|".join(rf"\b{re.escape(t)}" for t in cat_terms), regex=True) if cat_terms else qt["query"].isin([])
+        queries = qt.loc[mask, "query"].tolist()[:2000] or self.examples[self.examples["product_id"].isin(pids)]["query"].unique().tolist()
+        return recs, f"closest listings among 1.2M US products (BM25 on the title); vocabulary from {len(queries):,} real searches for {', '.join(cat_terms) or 'similar items'}", queries
 
     _brand_tokens: set[str] | None = None
 
@@ -103,7 +115,8 @@ class Catalog:
             brands = self.products["product_brand"].dropna().str.lower()
             self._brand_tokens = {b.strip() for b in brands.unique() if b.strip() and " " not in b.strip() and len(b.strip()) > 2}
             self._brand_tokens -= {"backpack", "bottle", "kids", "baby", "home", "pro", "plus", "mini", "smart", "light", "men", "women"}
-        return buyer_vocab_from_queries(queries, top_n=25, drop=self._brand_tokens)
+        first = {b.split()[0] for b in self.products["product_brand"].dropna().str.lower().unique() if " " in b}
+        return buyer_vocab_from_queries(queries, top_n=25, drop=self._brand_tokens | first, min_count=2)
 
 
 def fetch_amazon(asin: str, timeout: float = 12.0) -> dict | None:
