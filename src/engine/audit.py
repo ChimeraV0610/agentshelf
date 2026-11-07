@@ -82,7 +82,7 @@ def audit_listing(fields: dict, buyer_vocab: list[str] | None = None) -> dict:
     elif desc:
         s += 3
     else:
-        issues.append("No description")
+        issues.append("No text description found (image-only A+ content is invisible to agents too)")
     dims["structure"] = {"score": s, "detail": f"title {len(title)} chars, {len(bullets)} bullets, description {len(desc)} chars"}
 
     # 5 fluff share (lower is better)

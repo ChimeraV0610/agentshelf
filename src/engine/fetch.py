@@ -93,11 +93,17 @@ class Catalog:
         queries = self.examples[self.examples["product_id"].isin(pids)]["query"].unique().tolist()[:50]
         return [self.record(p) for p in pids], "closest listings among 1.2M US products (BM25 on the title)", queries
 
-    @staticmethod
-    def vocab(queries: list[str], fields: dict) -> list[str]:
+    _brand_tokens: set[str] | None = None
+
+    def vocab(self, queries: list[str], fields: dict) -> list[str]:
+        """Frequent shopper-query terms, minus brand names (which are noise for a seller's own listing)."""
         if not queries:
             return []
-        return buyer_vocab_from_queries(queries, top_n=25)
+        if self._brand_tokens is None:
+            brands = self.products["product_brand"].dropna().str.lower()
+            self._brand_tokens = {b.strip() for b in brands.unique() if b.strip() and " " not in b.strip() and len(b.strip()) > 2}
+            self._brand_tokens -= {"backpack", "bottle", "kids", "baby", "home", "pro", "plus", "mini", "smart", "light", "men", "women"}
+        return buyer_vocab_from_queries(queries, top_n=25, drop=self._brand_tokens)
 
 
 def fetch_amazon(asin: str, timeout: float = 12.0) -> dict | None:
