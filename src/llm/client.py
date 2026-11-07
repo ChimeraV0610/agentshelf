@@ -82,13 +82,32 @@ class LLMClient:
         return hashlib.sha256(payload.encode()).hexdigest()
 
     def _get(self, key: str):
-        row = self.db.execute("SELECT response FROM cache WHERE key=?", (key,)).fetchone()
+        try:
+            row = self.db.execute("SELECT response FROM cache WHERE key=?", (key,)).fetchone()
+        except sqlite3.OperationalError:
+            self._reopen()
+            row = self.db.execute("SELECT response FROM cache WHERE key=?", (key,)).fetchone()
         return json.loads(row[0]) if row else None
 
+    def _reopen(self):
+        try:
+            self.db.close()
+        except Exception:  # noqa: BLE001
+            pass
+        self.db = sqlite3.connect(self.cache_path, check_same_thread=False)
+
     def _put(self, key: str, model: str, response: dict, usage: dict):
-        self.db.execute("INSERT OR REPLACE INTO cache VALUES (?,?,?,?,?)",
-                        (key, model, json.dumps(response, ensure_ascii=False), json.dumps(usage), time.time()))
-        self.db.commit()
+        """Cache writes must never take the demo down: retry once on a stale handle, then give up quietly."""
+        row = (key, model, json.dumps(response, ensure_ascii=False), json.dumps(usage), time.time())
+        for attempt in range(2):
+            try:
+                self.db.execute("INSERT OR REPLACE INTO cache VALUES (?,?,?,?,?)", row)
+                self.db.commit()
+                return
+            except sqlite3.OperationalError as e:
+                self._reopen()
+                if attempt == 1:
+                    print(f"[llm cache] write skipped: {e}")
 
     # ---------- providers ----------
     @retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=2, min=2, max=60),
@@ -207,13 +226,24 @@ class LLMClient:
         self._put(key, model, result, usage)
         return {**result, "cached": False}
 
+    def _fresh_loop(self):
+        self._loop = asyncio.new_event_loop()
+        self._anthropic = self._openai = self._ollama = None  # async HTTP clients are bound to the old loop
+        return self._loop
+
     def _loop_run(self, coro):
-        """Run a coroutine on one persistent loop so async HTTP clients survive between sync calls."""
+        """Run a coroutine on one persistent loop so async HTTP clients survive between sync calls.
+        If a UI rerun interrupted the previous call (loop stopped mid-future), rebuild the loop and clients."""
         loop = getattr(self, "_loop", None)
-        if loop is None or loop.is_closed():
-            loop = asyncio.new_event_loop()
-            self._loop = loop
-        return loop.run_until_complete(coro)
+        if loop is None or loop.is_closed() or loop.is_running():
+            loop = self._fresh_loop()
+        try:
+            return loop.run_until_complete(coro)
+        except RuntimeError as e:
+            if "Event loop" not in str(e):
+                raise
+            loop = self._fresh_loop()
+            return loop.run_until_complete(coro)
 
     def call(self, *args, **kwargs) -> dict:
         return self._loop_run(self.acall(*args, **kwargs))
